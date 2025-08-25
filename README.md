@@ -21,10 +21,11 @@ parsers.mcfunction = {
 }
 ```
 
-```console
+```sh
 git clone https://github.com/phoenixr-codes/tree-sitter-mcfunction.git
 cd tree-sitter-mcfunction
-ln queries/highlights.scm ~/.config/nvim/queries/mcfunction/highlights.scm
+mkdir -p ~/.config/nvim/queries/mcfunction
+ln queries/*.scm ~/.config/nvim/queries/mcfunction
 ```
 
 [tree-sitter]: https://github.com/tree-sitter/tree-sitter
