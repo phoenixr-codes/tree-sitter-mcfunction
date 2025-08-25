@@ -1,5 +1,4 @@
 ; TODO: see `:h treesitter-highlight-groups` for useful rules
-; TODO: see treesitter-highlight-commentstring*
 
 ; TODO: apply @markup.heading.? for headings as described in
 ;       https://wiki.bedrock.dev/commands/mcfunctions#comments-style-guide
