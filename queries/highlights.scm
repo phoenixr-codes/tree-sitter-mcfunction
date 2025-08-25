@@ -24,11 +24,13 @@
 (negation) @operator
 ("/") @operator
 (",") @punctuation.delimiter
+("=") @punctuation.delimiter
 ("[") @punctuation.bracket
 ("]") @punctuation.bracket
 
 (rest) @string
 (rest) @spell
 
-(selector_variable) @variable.builtin
+(selector_arg_key) @property
+(selector_variable) @constant.builtin
 (player_selector) @string.special
