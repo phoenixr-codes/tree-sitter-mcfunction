@@ -1,0 +1,517 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
+  "name": "mcfunction",
+  "rules": {
+    "source_file": {
+      "type": "REPEAT",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "comment"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "command"
+          }
+        ]
+      }
+    },
+    "comment": {
+      "type": "TOKEN",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "#"
+          },
+          {
+            "type": "PATTERN",
+            "value": ".*"
+          }
+        ]
+      }
+    },
+    "selector": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "selector_variable"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "selector_arguments"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "player_selector"
+        }
+      ]
+    },
+    "player_selector": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z0-9]+"
+    },
+    "selector_variable": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "selector_var_nearest_player"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "selector_var_nearest_entity"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "selector_var_random_player"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "selector_var_all_players"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "selector_var_all_entities"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "selector_var_self"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "selector_var_initiator"
+        }
+      ]
+    },
+    "selector_arguments": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "SYMBOL",
+          "name": "selector_argument"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ","
+              },
+              {
+                "type": "SYMBOL",
+                "name": "selector_argument"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        }
+      ]
+    },
+    "selector_argument": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "selector_arg_key"
+        },
+        {
+          "type": "STRING",
+          "value": "="
+        },
+        {
+          "type": "SYMBOL",
+          "name": "selector_arg_value"
+        }
+      ]
+    },
+    "selector_arg_key": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "name"
+        },
+        {
+          "type": "STRING",
+          "value": "r"
+        },
+        {
+          "type": "STRING",
+          "value": "rx"
+        }
+      ]
+    },
+    "selector_arg_value": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "negation"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "integer"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "text"
+            }
+          ]
+        }
+      ]
+    },
+    "negation": {
+      "type": "STRING",
+      "value": "!"
+    },
+    "integer": {
+      "type": "PATTERN",
+      "value": "[0-9]+"
+    },
+    "text": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z][a-zA-Z0-9]*"
+    },
+    "selector_var_nearest_player": {
+      "type": "STRING",
+      "value": "@p"
+    },
+    "selector_var_nearest_entity": {
+      "type": "STRING",
+      "value": "@n"
+    },
+    "selector_var_random_player": {
+      "type": "STRING",
+      "value": "@r"
+    },
+    "selector_var_all_players": {
+      "type": "STRING",
+      "value": "@a"
+    },
+    "selector_var_all_entities": {
+      "type": "STRING",
+      "value": "@e"
+    },
+    "selector_var_self": {
+      "type": "STRING",
+      "value": "@s"
+    },
+    "selector_var_initiator": {
+      "type": "STRING",
+      "value": "@initiator"
+    },
+    "command": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "execute_command"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "replaceitem_command"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "say_command"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tell_command"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "tellraw_command"
+        }
+      ]
+    },
+    "execute_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "execute_keyword"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "execute_if_subcommand"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "execute_in_subcommand"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "execute_unless_subcommand"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "run_keyword"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "/"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "command"
+        }
+      ]
+    },
+    "execute_if_subcommand": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "if_keyword"
+        }
+      ]
+    },
+    "execute_in_subcommand": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "in_keyword"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "nether"
+            },
+            {
+              "type": "STRING",
+              "value": "overworld"
+            },
+            {
+              "type": "STRING",
+              "value": "the_end"
+            }
+          ]
+        }
+      ]
+    },
+    "execute_unless_subcommand": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "unless_keyword"
+        }
+      ]
+    },
+    "replaceitem_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "replaceitem_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "entity_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "selector"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "replacitem_slot"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "integer"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "item"
+        }
+      ]
+    },
+    "say_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "say_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_ws"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "rest"
+        }
+      ]
+    },
+    "tell_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "tell_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "selector"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_ws"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "rest"
+        }
+      ]
+    },
+    "tellraw_command": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "tellraw_keyword"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "selector"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_ws"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "json"
+        }
+      ]
+    },
+    "entity_keyword": {
+      "type": "STRING",
+      "value": "entity"
+    },
+    "execute_keyword": {
+      "type": "STRING",
+      "value": "execute"
+    },
+    "if_keyword": {
+      "type": "STRING",
+      "value": "if"
+    },
+    "in_keyword": {
+      "type": "STRING",
+      "value": "in"
+    },
+    "replaceitem_keyword": {
+      "type": "STRING",
+      "value": "replaceitem"
+    },
+    "run_keyword": {
+      "type": "STRING",
+      "value": "run"
+    },
+    "say_keyword": {
+      "type": "STRING",
+      "value": "say"
+    },
+    "tell_keyword": {
+      "type": "STRING",
+      "value": "tell"
+    },
+    "tellraw_keyword": {
+      "type": "STRING",
+      "value": "tellraw"
+    },
+    "unless_keyword": {
+      "type": "STRING",
+      "value": "unless"
+    },
+    "rest": {
+      "type": "PATTERN",
+      "value": ".+"
+    },
+    "json": {
+      "type": "PATTERN",
+      "value": ".+"
+    },
+    "_ws": {
+      "type": "PATTERN",
+      "value": "\\s+"
+    },
+    "replacitem_slot": {
+      "type": "PATTERN",
+      "value": "slot\\.[.a-zA-Z]+"
+    },
+    "item": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z_]+"
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": [],
+  "reserved": {}
+}

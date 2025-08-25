@@ -1,0 +1,507 @@
+[
+  {
+    "type": "command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "execute_command",
+          "named": true
+        },
+        {
+          "type": "replaceitem_command",
+          "named": true
+        },
+        {
+          "type": "say_command",
+          "named": true
+        },
+        {
+          "type": "tell_command",
+          "named": true
+        },
+        {
+          "type": "tellraw_command",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "execute_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "command",
+          "named": true
+        },
+        {
+          "type": "execute_if_subcommand",
+          "named": true
+        },
+        {
+          "type": "execute_in_subcommand",
+          "named": true
+        },
+        {
+          "type": "execute_keyword",
+          "named": true
+        },
+        {
+          "type": "execute_unless_subcommand",
+          "named": true
+        },
+        {
+          "type": "run_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "execute_if_subcommand",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "if_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "execute_in_subcommand",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "in_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "execute_unless_subcommand",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "unless_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "json",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "replaceitem_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "entity_keyword",
+          "named": true
+        },
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "item",
+          "named": true
+        },
+        {
+          "type": "replaceitem_keyword",
+          "named": true
+        },
+        {
+          "type": "replacitem_slot",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "rest",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "say_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "rest",
+          "named": true
+        },
+        {
+          "type": "say_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "selector",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "player_selector",
+          "named": true
+        },
+        {
+          "type": "selector_arguments",
+          "named": true
+        },
+        {
+          "type": "selector_variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "selector_arg_key",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "selector_arg_value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "integer",
+          "named": true
+        },
+        {
+          "type": "negation",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "selector_argument",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "selector_arg_key",
+          "named": true
+        },
+        {
+          "type": "selector_arg_value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "selector_arguments",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "selector_argument",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "selector_variable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "selector_var_all_entities",
+          "named": true
+        },
+        {
+          "type": "selector_var_all_players",
+          "named": true
+        },
+        {
+          "type": "selector_var_initiator",
+          "named": true
+        },
+        {
+          "type": "selector_var_nearest_entity",
+          "named": true
+        },
+        {
+          "type": "selector_var_nearest_player",
+          "named": true
+        },
+        {
+          "type": "selector_var_random_player",
+          "named": true
+        },
+        {
+          "type": "selector_var_self",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "command",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tell_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "rest",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        },
+        {
+          "type": "tell_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tellraw_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "json",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        },
+        {
+          "type": "tellraw_keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "entity_keyword",
+    "named": true
+  },
+  {
+    "type": "execute_keyword",
+    "named": true
+  },
+  {
+    "type": "if_keyword",
+    "named": true
+  },
+  {
+    "type": "in_keyword",
+    "named": true
+  },
+  {
+    "type": "integer",
+    "named": true
+  },
+  {
+    "type": "item",
+    "named": true
+  },
+  {
+    "type": "name",
+    "named": false
+  },
+  {
+    "type": "negation",
+    "named": true
+  },
+  {
+    "type": "nether",
+    "named": false
+  },
+  {
+    "type": "overworld",
+    "named": false
+  },
+  {
+    "type": "player_selector",
+    "named": true
+  },
+  {
+    "type": "r",
+    "named": false
+  },
+  {
+    "type": "replaceitem_keyword",
+    "named": true
+  },
+  {
+    "type": "replacitem_slot",
+    "named": true
+  },
+  {
+    "type": "run_keyword",
+    "named": true
+  },
+  {
+    "type": "rx",
+    "named": false
+  },
+  {
+    "type": "say_keyword",
+    "named": true
+  },
+  {
+    "type": "selector_var_all_entities",
+    "named": true
+  },
+  {
+    "type": "selector_var_all_players",
+    "named": true
+  },
+  {
+    "type": "selector_var_initiator",
+    "named": true
+  },
+  {
+    "type": "selector_var_nearest_entity",
+    "named": true
+  },
+  {
+    "type": "selector_var_nearest_player",
+    "named": true
+  },
+  {
+    "type": "selector_var_random_player",
+    "named": true
+  },
+  {
+    "type": "selector_var_self",
+    "named": true
+  },
+  {
+    "type": "tell_keyword",
+    "named": true
+  },
+  {
+    "type": "tellraw_keyword",
+    "named": true
+  },
+  {
+    "type": "text",
+    "named": true
+  },
+  {
+    "type": "the_end",
+    "named": false
+  },
+  {
+    "type": "unless_keyword",
+    "named": true
+  }
+]
