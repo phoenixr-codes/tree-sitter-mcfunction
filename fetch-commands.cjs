@@ -1,0 +1,137 @@
+// @ts-check
+
+const marked = require("marked");
+const path = require("node:path");
+const fs = require("node:fs");
+const { tmpdir } = require("node:os");
+const { spawn } = require("node:child_process");
+const { exit, env } = require("node:process");
+
+const repoUrl = "https://github.com/MicrosoftDocs/minecraft-creator.git";
+const repoPath = env.MINECRAFT_CREATOR ?? path.join(tmpdir(), "minecraft-creator");
+
+/**
+ * @typedef {{literal: string} | {type: string, required: boolean}} CommandToken
+ */
+
+/**
+ * Runs a command.
+ *
+ * @param {string} command 
+ * @param {string[]} args 
+ */
+function run(command, args) {
+  return new Promise((resolve, reject) => {
+    const cmd = spawn(command, args, { stdio: "inherit" });
+
+    cmd.on("error", (err) => {
+      reject(err);
+    });
+
+    cmd.on("close", (code) => {
+      if (code === 0) {
+        resolve(null);
+      } else {
+        reject(code);
+      }
+    });
+  });
+}
+
+/**
+ * @param {string} input
+ * @returns {CommandToken[]}
+ */
+function parseCommandSyntax(input) {
+  const requiredParamPattern = /<([^>]+)>/g;
+  const optionalParamPattern = /\[([^\]]+)\]/g;
+  const constantParamPattern = /(\w+)/g;
+
+  /** @type [number, number, CommandToken][] */
+  const matches = [];
+
+  for (const match of input.matchAll(optionalParamPattern)) {
+    const type = (match[1].split(": ")[1] ?? "TODO").split(" ").join("");
+    const start = match.index;
+    const end = match.index + match[0].length;
+    matches.push([start, end, {type, required: false}]);
+  }
+
+  for (const match of input.matchAll(requiredParamPattern)) {
+    const type = (match[1].split(": ")[1] ?? "TODO").split(" ").join("");
+    const start = match.index;
+    const end = match.index + match[0].length;
+    matches.push([start, end, {type, required: true}]);
+  }
+
+  for (const match of input.matchAll(constantParamPattern)) {
+    const overlaps = matches.some(([start, end]) => match.index >= start && match.index <= end);
+    if (overlaps) continue;
+    const constant = match[1];
+    const start = match.index;
+    const end = match.index + match[0].length;
+    matches.push([start, end, {literal: constant}]);
+  }
+
+  matches.sort((a, b) => a[0] - b[0]);
+  return matches.map(([_start, _end, token]) => token);
+}
+
+(async () => {
+  if (fs.existsSync(repoPath)) {
+    try {
+      await run("git", ["-C", repoPath, "pull"]);
+    } catch (err) {
+      console.error(err);
+      exit(1);
+    }
+  } else {
+    try {
+      await run("git", ["clone", "--depth", "1", repoUrl, repoPath]);
+    } catch (err) {
+      console.error(err);
+      exit(1);
+    }
+  }
+
+  let output = "";
+  const commandsPath = path.join(repoPath, "creator/Commands/commands");
+  for (const fileName of fs.readdirSync(commandsPath)) {
+    const filePath = path.join(commandsPath, fileName);
+    const content = fs.readFileSync(filePath, "utf8");
+    const commandName = path.basename(fileName, ".md");
+    const md = marked.lexer(content);
+    
+    output += `${commandName}: $ => choice(\n`;
+    for (const node of md) {
+      if ("tokens" in node) {
+        md.push(...(node.tokens ?? []));
+      }
+      const isUsage = node.type === "codespan" && node.text.startsWith("/");
+      if (isUsage) {
+        const tokens = parseCommandSyntax(node.text);
+        console.log(tokens);
+
+        let reachedOptionals = false;
+        output += "  seq(";
+        for (const token of tokens) {
+          if ("literal" in token) {
+            output += `"${token.literal}",`;
+          } else if ("type" in token) {
+            if (!reachedOptionals && !token.required) {
+              reachedOptionals = true;
+              output += "optional(seq(";
+            }
+            output += `$.${token.type},`;
+          }
+        }
+        if (reachedOptionals) {
+          output += "))";
+        }
+        output += "),\n";
+      }
+    }
+    output += "),\n";
+  }
+  console.log(output);
+})();

@@ -13,6 +13,20 @@ module.exports = grammar({
   rules: {
     source_file: $ => repeat(choice($.comment, $.command)),
 
+    // commands
+    aimassist: $ => choice(
+      seq($.target, "set", $.float, $.float, $.float, $.float)
+    ),
+    titleraw: $ => choice(
+      seq($.target, "clear"),
+      seq($.target, "reset"),
+      seq($.target, $.titleRawSet, $.json),
+      seq($.target, "times", $.int, $.int, $.int),
+    ),
+
+
+    // other
+
     comment: _ => token(seq("#", /.*/)),
 
     selector: $ => choice(

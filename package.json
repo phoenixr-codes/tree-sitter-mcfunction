@@ -7,6 +7,7 @@
   "author": {
     "name": "Jonas da Silva"
   },
+  "type": "commonjs",
   "main": "bindings/node",
   "types": "bindings/node",
   "keywords": [
@@ -26,6 +27,7 @@
     "*.wasm"
   ],
   "dependencies": {
+    "marked": "^16.2.1",
     "node-addon-api": "^8.3.1",
     "node-gyp-build": "^4.8.4"
   },
@@ -45,6 +47,7 @@
     "install": "node-gyp-build",
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
-    "test": "node --test bindings/node/*_test.js"
+    "test": "node --test bindings/node/*_test.js",
+    "fetch-commands": "node fetch-commands.cjs"
   }
 }
