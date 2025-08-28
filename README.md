@@ -4,6 +4,10 @@
 
 ## Editor Integration
 
+> [!IMPORTANT]
+> For full compability, also make sure to have Tree-sitter grammar installed for
+> JSON.
+
 ### Neovim
 
 > [!NOTE]
