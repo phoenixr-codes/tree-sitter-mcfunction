@@ -1,0 +1,23 @@
+[
+  "wood_pickaxe",
+  "wood_sword",
+  "crafting_table",
+  "furnace",
+  "armor",
+  "tip_crosshair",
+  "shank",
+  "heart",
+  "minecoin",
+  "token",
+  "craftable_toggle_on",
+  "craftable_toggle_off",
+  "mouse_left_button",
+  "mouse_right_button",
+  "mouse_middle_button",
+  "mouse_button",
+  "light_mouse_left_button",
+  "light_mouse_right_button",
+  "light_mouse_middle_button",
+  "light_mouse_button"
+  // TODO
+]

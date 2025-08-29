@@ -7,6 +7,8 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
+const emojis = require("./data/emojis.json");
+
 module.exports = grammar({
   name: "mcfunction",
 

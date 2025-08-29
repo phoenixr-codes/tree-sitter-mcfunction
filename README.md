@@ -36,4 +36,8 @@ ln queries/*.scm ~/.config/nvim/queries/mcfunction
 
 - [Official list of commands and their syntax](https://github.com/MicrosoftDocs/minecraft-creator/tree/main/creator/Commands/commands)
 
+## TODO
+
+- Highlight selectors (like `@a`) and emojis (like `:heart:`) in message strings
+
 [tree-sitter]: https://github.com/tree-sitter/tree-sitter
