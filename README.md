@@ -4,7 +4,7 @@
 
 ## Editor Integration
 
-> [!IMPORTANT]
+> [!TIP]
 > For full compability, also make sure to have Tree-sitter grammar installed for
 > JSON.
 
