@@ -1,6 +1,7 @@
 // @ts-check
 
 const marked = require("marked");
+const { snake } = require("case");
 const path = require("node:path");
 const fs = require("node:fs");
 const { tmpdir } = require("node:os");
@@ -55,14 +56,14 @@ function parseCommandSyntax(input) {
     const type = (match[1].split(": ")[1] ?? "TODO").split(" ").join("");
     const start = match.index;
     const end = match.index + match[0].length;
-    matches.push([start, end, {type, required: false}]);
+    matches.push([start, end, { type, required: false }]);
   }
 
   for (const match of input.matchAll(requiredParamPattern)) {
     const type = (match[1].split(": ")[1] ?? "TODO").split(" ").join("");
     const start = match.index;
     const end = match.index + match[0].length;
-    matches.push([start, end, {type, required: true}]);
+    matches.push([start, end, { type, required: true }]);
   }
 
   for (const match of input.matchAll(constantParamPattern)) {
@@ -71,7 +72,7 @@ function parseCommandSyntax(input) {
     const constant = match[1];
     const start = match.index;
     const end = match.index + match[0].length;
-    matches.push([start, end, {literal: constant}]);
+    matches.push([start, end, { literal: constant }]);
   }
 
   matches.sort((a, b) => a[0] - b[0]);
@@ -102,7 +103,7 @@ function parseCommandSyntax(input) {
     const content = fs.readFileSync(filePath, "utf8");
     const commandName = path.basename(fileName, ".md");
     const md = marked.lexer(content);
-    
+
     output += `  ${commandName}: $ => choice(\n`;
     for (const node of md) {
       if ("tokens" in node) {
@@ -122,7 +123,7 @@ function parseCommandSyntax(input) {
               reachedOptionals = true;
               output += "optional(seq(";
             }
-            output += `$.${token.type},`;
+            output += `$._${snake(token.type)},`;
           }
         }
         if (reachedOptionals) {
@@ -134,6 +135,6 @@ function parseCommandSyntax(input) {
     output += "  ),\n";
   }
   output += "};"
- 
+
   fs.writeFileSync(path.join(root, "data/commands.cjs"), output);
 })();
