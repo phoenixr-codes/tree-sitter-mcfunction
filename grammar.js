@@ -7,7 +7,7 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
-const emojis = require("./data/emojis.json");
+const commands = require("./data/commands.cjs")
 
 module.exports = grammar({
   name: "mcfunction",
@@ -15,20 +15,18 @@ module.exports = grammar({
   rules: {
     source_file: $ => repeat(choice($.comment, $.command)),
 
-    // commands
-    aimassist: $ => choice(
-      seq($.target, "set", $.float, $.float, $.float, $.float)
-    ),
-    titleraw: $ => choice(
-      seq($.target, "clear"),
-      seq($.target, "reset"),
-      seq($.target, $.titleRawSet, $.json),
-      seq($.target, "times", $.int, $.int, $.int),
-    ),
+    ...commands,
 
+    // enums
+    _aim_assist_target_mode: _ => choice("distance", "angle"),
+    _allow_list_action: _ => choice("add", "remove", "list", "reload", "on", "off"),
+
+    // types
+    _float: _ => /[0-9]+(\.[0-9]+)?/,
+    _string: _ => /\S+/,
+    _target: $ => $.selector,
 
     // other
-
     comment: _ => token(seq("#", /.*/)),
 
     selector: $ => choice(
