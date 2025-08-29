@@ -17,14 +17,24 @@ module.exports = grammar({
 
     ...commands,
 
-    // enums
-    _aim_assist_target_mode: _ => choice("distance", "angle"),
-    _allow_list_action: _ => choice("add", "remove", "list", "reload", "on", "off"),
-
     // types
+    _blockproperties: _ => "TODO",
+    _codebuilderargs: $ => $.command,
+    _compareoperator: _ => "TODO",
+    _default: _ => "default",
+    _executechainedoption_0: _ => "TODO",
+    _filepath: _ => "TODO",
     _float: _ => /[0-9]+(\.[0-9]+)?/,
+    _fullintegerrange: _ => "TODO",
+    _game_test_name: _ => "TODO",
+    _game_test_tag: _ => "TODO",
+    _int: _ => /[0-9]+/,
+    _json: $ => $.json,
+    _message: $ => $.message,
+    _scoreboard_objectives: _ => "TODO",
     _string: _ => /\S+/,
     _target: $ => $.selector,
+    _xyz: $ => seq($._float, $._float, $._float),
 
     // other
     comment: _ => token(seq("#", /.*/)),
@@ -135,14 +145,14 @@ module.exports = grammar({
     say_command: $ => seq(
       $.say_keyword,
       $._ws,
-      $.rest,
+      $.message,
     ),
 
     tell_command: $ => seq(
       $.tell_keyword,
       $.selector,
       $._ws,
-      $.rest,
+      $.message,
     ),
 
     tellraw_command: $ => seq(
@@ -163,7 +173,7 @@ module.exports = grammar({
     tellraw_keyword: _ => "tellraw",
     unless_keyword: _ => "unless",
 
-    rest: _ => /.+/,
+    message: _ => /.+/,
     json: _ => /.+/,
 
     _ws: _ => /\s+/,
