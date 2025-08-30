@@ -18,6 +18,7 @@ module.exports = grammar({
     ...commands,
 
     // types
+    _all_dimensions: _ => "TODO",
     _blockproperties: _ => "TODO",
     _codebuilderargs: $ => $.command,
     _compareoperator: _ => "TODO",
@@ -31,9 +32,14 @@ module.exports = grammar({
     _int: _ => /[0-9]+/,
     _json: $ => $.json,
     _message: $ => $.message,
+    _operator: _ => "TODO",
     _scoreboard_objectives: _ => "TODO",
     _string: _ => /\S+/,
+    _tag_values: _ => "TODO",
     _target: $ => $.selector,
+    _text: _ => "TODO",
+    _time: $ => seq($._int, choice("D", "S", "T")),
+    _wildcardint: $ => choice("*", $._int),
     _xyz: $ => seq($._float, $._float, $._float),
 
     // other

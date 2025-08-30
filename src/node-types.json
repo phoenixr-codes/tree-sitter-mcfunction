@@ -116,6 +116,11 @@
     "fields": {}
   },
   {
+    "type": "message",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "replaceitem_command",
     "named": true,
     "fields": {},
@@ -151,11 +156,6 @@
     }
   },
   {
-    "type": "rest",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "say_command",
     "named": true,
     "fields": {},
@@ -164,7 +164,7 @@
       "required": true,
       "types": [
         {
-          "type": "rest",
+          "type": "message",
           "named": true
         },
         {
@@ -327,7 +327,7 @@
       "required": true,
       "types": [
         {
-          "type": "rest",
+          "type": "message",
           "named": true
         },
         {

@@ -9,7 +9,6 @@ const fs = require("node:fs");
 const { tmpdir } = require("node:os");
 const { spawn } = require("node:child_process");
 const { exit, env } = require("node:process");
-const { assert } = require("node:console");
 
 const repoUrl = "https://github.com/MicrosoftDocs/minecraft-creator.git";
 const repoPath = env.MINECRAFT_CREATOR ?? path.join(tmpdir(), "minecraft-creator");
@@ -85,6 +84,8 @@ function parseCommandSyntax(input) {
   const matches = [];
 
   for (const match of input.matchAll(optionalParamPattern)) {
+    const overlaps = matches.some(([start, end]) => match.index >= start && match.index <= end);
+    if (overlaps) continue;
     const type = (match[1].split(": ")[1] ?? "TODO").split(" ").join("");
     const start = match.index;
     const end = match.index + match[0].length;
@@ -92,6 +93,8 @@ function parseCommandSyntax(input) {
   }
 
   for (const match of input.matchAll(requiredParamPattern)) {
+    const overlaps = matches.some(([start, end]) => match.index >= start && match.index <= end);
+    if (overlaps) continue;
     const type = (match[1].split(": ")[1] ?? "TODO").split(" ").join("");
     const start = match.index;
     const end = match.index + match[0].length;

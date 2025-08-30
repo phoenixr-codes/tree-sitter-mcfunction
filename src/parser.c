@@ -53,7 +53,7 @@ enum ts_symbol_identifiers {
   sym_tell_keyword = 31,
   sym_tellraw_keyword = 32,
   sym_unless_keyword = 33,
-  aux_sym_rest_token1 = 34,
+  aux_sym_message_token1 = 34,
   sym__ws = 35,
   sym_replacitem_slot = 36,
   sym_item = 37,
@@ -73,7 +73,7 @@ enum ts_symbol_identifiers {
   sym_say_command = 51,
   sym_tell_command = 52,
   sym_tellraw_command = 53,
-  sym_rest = 54,
+  sym_message = 54,
   sym_json = 55,
   aux_sym_source_file_repeat1 = 56,
   aux_sym_selector_arguments_repeat1 = 57,
@@ -114,7 +114,7 @@ static const char * const ts_symbol_names[] = {
   [sym_tell_keyword] = "tell_keyword",
   [sym_tellraw_keyword] = "tellraw_keyword",
   [sym_unless_keyword] = "unless_keyword",
-  [aux_sym_rest_token1] = "rest_token1",
+  [aux_sym_message_token1] = "message_token1",
   [sym__ws] = "_ws",
   [sym_replacitem_slot] = "replacitem_slot",
   [sym_item] = "item",
@@ -134,7 +134,7 @@ static const char * const ts_symbol_names[] = {
   [sym_say_command] = "say_command",
   [sym_tell_command] = "tell_command",
   [sym_tellraw_command] = "tellraw_command",
-  [sym_rest] = "rest",
+  [sym_message] = "message",
   [sym_json] = "json",
   [aux_sym_source_file_repeat1] = "source_file_repeat1",
   [aux_sym_selector_arguments_repeat1] = "selector_arguments_repeat1",
@@ -175,7 +175,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_tell_keyword] = sym_tell_keyword,
   [sym_tellraw_keyword] = sym_tellraw_keyword,
   [sym_unless_keyword] = sym_unless_keyword,
-  [aux_sym_rest_token1] = aux_sym_rest_token1,
+  [aux_sym_message_token1] = aux_sym_message_token1,
   [sym__ws] = sym__ws,
   [sym_replacitem_slot] = sym_replacitem_slot,
   [sym_item] = sym_item,
@@ -195,7 +195,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_say_command] = sym_say_command,
   [sym_tell_command] = sym_tell_command,
   [sym_tellraw_command] = sym_tellraw_command,
-  [sym_rest] = sym_rest,
+  [sym_message] = sym_message,
   [sym_json] = sym_json,
   [aux_sym_source_file_repeat1] = aux_sym_source_file_repeat1,
   [aux_sym_selector_arguments_repeat1] = aux_sym_selector_arguments_repeat1,
@@ -338,7 +338,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [aux_sym_rest_token1] = {
+  [aux_sym_message_token1] = {
     .visible = false,
     .named = false,
   },
@@ -418,7 +418,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [sym_rest] = {
+  [sym_message] = {
     .visible = true,
     .named = true,
   },
@@ -936,7 +936,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       ACCEPT_TOKEN(sym_unless_keyword);
       END_STATE();
     case 114:
-      ACCEPT_TOKEN(aux_sym_rest_token1);
+      ACCEPT_TOKEN(aux_sym_message_token1);
       if (lookahead == '\t' ||
           (0x0b <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') ADVANCE(114);
@@ -944,7 +944,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           (lookahead < '\t' || '\r' < lookahead)) ADVANCE(115);
       END_STATE();
     case 115:
-      ACCEPT_TOKEN(aux_sym_rest_token1);
+      ACCEPT_TOKEN(aux_sym_message_token1);
       if (lookahead != 0 &&
           lookahead != '\n') ADVANCE(115);
       END_STATE();
@@ -1420,7 +1420,7 @@ static const uint16_t ts_small_parse_table[] = {
       aux_sym_selector_arguments_repeat1,
   [430] = 2,
     ACTIONS(124), 1,
-      aux_sym_rest_token1,
+      aux_sym_message_token1,
     STATE(15), 1,
       sym_json,
   [437] = 2,
@@ -1430,14 +1430,14 @@ static const uint16_t ts_small_parse_table[] = {
       sym__ws,
   [444] = 2,
     ACTIONS(130), 1,
-      aux_sym_rest_token1,
+      aux_sym_message_token1,
     STATE(13), 1,
-      sym_rest,
+      sym_message,
   [451] = 2,
     ACTIONS(130), 1,
-      aux_sym_rest_token1,
+      aux_sym_message_token1,
     STATE(10), 1,
-      sym_rest,
+      sym_message,
   [458] = 1,
     ACTIONS(132), 2,
       sym_integer,
@@ -1622,8 +1622,8 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [53] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_command, 1, 0, 0),
   [55] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_say_command, 3, 0, 0),
   [57] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_say_command, 3, 0, 0),
-  [59] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_rest, 1, 0, 0),
-  [61] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_rest, 1, 0, 0),
+  [59] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_message, 1, 0, 0),
+  [61] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_message, 1, 0, 0),
   [63] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_execute_command, 4, 0, 0),
   [65] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_execute_command, 4, 0, 0),
   [67] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_tell_command, 4, 0, 0),
