@@ -3,22 +3,10 @@
 ; TODO: apply @markup.heading.? for headings as described in
 ;       https://wiki.bedrock.dev/commands/mcfunctions#comments-style-guide
 
-(execute_keyword) @function.call
-(replaceitem_keyword) @function.call
-(say_keyword) @function.call
-(tell_keyword) @function.call
-(tellraw_keyword) @function.call
-
-(entity_keyword) @keyword
-(in_keyword) @keyword
-(run_keyword) @keyword
-
-(if_keyword) @keyword.conditional
-(unless_keyword) @keyword.conditional
-
 (comment) @comment
 
-(integer) @number
+(int) @number
+(float) @number.float
 
 (negation) @operator
 ("/") @operator
@@ -27,8 +15,15 @@
 ("[") @punctuation.bracket
 ("]") @punctuation.bracket
 
-(rest) @string
-(rest) @spell
+(string)  @string
+(string)  @spell
+(message) @string
+(message) @spell
+
+[
+ "say"
+ "tell"
+] @keyword
 
 (selector_arg_key) @property
 (selector_variable) @constant.builtin

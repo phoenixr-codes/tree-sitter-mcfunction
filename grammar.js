@@ -7,34 +7,77 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
+// TODO: add `word` token (https://tree-sitter.github.io/tree-sitter/creating-parsers/3-writing-the-grammar.html#keyword-extraction)
+
 const commands = require("./data/commands.cjs")
+
+const commandNames = Object.keys(commands).filter((key) => !key.startsWith("_"));
 
 module.exports = grammar({
   name: "mcfunction",
 
+  extras: _ => [
+    /\s|\n/,
+  ],
+
+  word: $ => $.identifier,
+
   rules: {
-    source_file: $ => repeat(choice($.comment, $.command)),
+    source_file: $ => repeat(choice($.comment, seq($.command, "\n"))),
+
+    command: $ => choice(...commandNames.map(key => $[key])),
 
     ...commands,
+
+    // patches
+    // Some things are not restricted to the predefined vanilla options
+    // especially when adding custom things through behavior packs.
+    _block: $ => $.identifier,
+    _entity_events: $ => $.identifier,
+    _entity_type: $ => $.identifier,
+    _item: $ => $.identifier,
+    _biome: $ => $.identifier,
+    _tool: $ => $.identifier,
+    _feature_rules: $ => $.identifier,
+    _unlockable_recipe_values: $ => $.identifier,
+
+    // We overwrite the grammar for execute in favor of efficiency.
+    execute: $ => seq("execute", $._execute_chained_option),
+    _execute_chained_option: $ => choice(
+      // TODO
+      seq("in", $._dimension, $._execute_chained_option),
+      seq(
+        choice("if", "unless"),
+        choice(
+          seq("block", $._xyz, $._block, optional($._blockproperties)),
+          seq("blocks", $._xyz, $._xyz, $._xyz, $._blocks_scan_mode),
+          seq("entity", $._target),
+          seq("score", $._target, $._scoreboard_objectives, choice(
+            seq($._compareoperator, $._target, $._scoreboard_objectives),
+            seq("matches", $._fullintegerrange)
+          ))
+        ),
+        optional($._execute_chained_option)
+      ),
+      seq("run", optional("/"), $.command),
+    ),
 
     // types
     _all_dimensions: _ => "TODO",
     _blockproperties: _ => "TODO",
-    _codebuilderargs: $ => $.command,
     _compareoperator: _ => "TODO",
     _default: _ => "default",
-    _executechainedoption_0: _ => "TODO",
-    _filepath: _ => "TODO",
-    _float: _ => /[0-9]+(\.[0-9]+)?/,
+    _filepath: $ => $.filepath,
+    _float: $ => $.float,
     _fullintegerrange: _ => "TODO",
     _game_test_name: _ => "TODO",
     _game_test_tag: _ => "TODO",
-    _int: _ => /[0-9]+/,
+    _int: $ => $.int,
     _json: $ => $.json,
-    _message: $ => $.message,
+    _message: $ => seq($._ws, $.message),
     _operator: _ => "TODO",
     _scoreboard_objectives: _ => "TODO",
-    _string: _ => /\S+/,
+    _string: $ => $.string,
     _tag_values: _ => "TODO",
     _target: $ => $.selector,
     _text: _ => "TODO",
@@ -42,9 +85,17 @@ module.exports = grammar({
     _wildcardint: $ => choice("*", $._int),
     _xyz: $ => seq($._float, $._float, $._float),
 
-    // other
+    // unwrapped types
+    // We do want some values to be present in the parse tree
+    filepath: _ => prec(1, /[/a-zA-Z0-9_.-]+/), // TODO
+    float: _ => prec(1, /[0-9]+(\.[0-9]+)?/),
+    int: _ => prec(1, /[0-9]+/),
+    string: _ => prec(1, /\S+/),
+
+    // comment
     comment: _ => token(seq("#", /.*/)),
 
+    // target selector
     selector: $ => choice(
       seq($.selector_variable, optional($.selector_arguments)),
       $.player_selector,
@@ -53,14 +104,23 @@ module.exports = grammar({
     player_selector: _ => /[a-zA-Z0-9]+/, // TODO: improve
 
     selector_variable: $ => choice(
-      $.selector_var_nearest_player,
-      $.selector_var_nearest_entity,
-      $.selector_var_random_player,
-      $.selector_var_all_players,
-      $.selector_var_all_entities,
-      $.selector_var_self,
-      $.selector_var_initiator,
+      $._selector_var_nearest_player,
+      $._selector_var_nearest_entity,
+      $._selector_var_random_player,
+      $._selector_var_all_players,
+      $._selector_var_all_entities,
+      $._selector_var_self,
+      $._selector_var_initiator,
     ),
+
+    _selector_var_nearest_player: _ => "@p",
+    _selector_var_nearest_entity: _ => "@n",
+    _selector_var_random_player: _ => "@r",
+    _selector_var_all_players: _ => "@a",
+    _selector_var_all_entities: _ => "@e",
+    _selector_var_self: _ => "@s",
+    _selector_var_initiator: _ => "@initiator",
+
 
     selector_arguments: $ => seq(
       "[",
@@ -85,107 +145,17 @@ module.exports = grammar({
     selector_arg_value: $ => seq(
       optional($.negation),
       choice(
-        $.integer,
-        $.text,
+        $._int,
+        //$._string,
         // TODO: ...
       )
     ),
 
+    // misc
     negation: _ => "!",
-
-    integer: _ => /[0-9]+/,
-    text: _ => /[a-zA-Z][a-zA-Z0-9]*/,
-
-    selector_var_nearest_player: _ => "@p",
-    selector_var_nearest_entity: _ => "@n",
-    selector_var_random_player: _ => "@r",
-    selector_var_all_players: _ => "@a",
-    selector_var_all_entities: _ => "@e",
-    selector_var_self: _ => "@s",
-    selector_var_initiator: _ => "@initiator",
-
-    command: $ => choice(
-      $.execute_command,
-      $.replaceitem_command,
-      $.say_command,
-      $.tell_command,
-      $.tellraw_command,
-    ),
-
-    execute_command: $ => seq(
-      $.execute_keyword,
-      choice(
-        $.execute_if_subcommand,
-        $.execute_in_subcommand,
-        $.execute_unless_subcommand,
-      ),
-      $.run_keyword,
-      optional("/"),
-      $.command,
-    ),
-
-    execute_if_subcommand: $ => seq(
-      $.if_keyword,
-      // TODO
-    ),
-
-    execute_in_subcommand: $ => seq(
-      $.in_keyword,
-      choice("nether", "overworld", "the_end"),
-    ),
-
-    execute_unless_subcommand: $ => seq(
-      $.unless_keyword,
-      // TODO
-    ),
-
-    replaceitem_command: $ => seq(
-      $.replaceitem_keyword,
-      $.entity_keyword, // TODO: block
-      $.selector,
-      $.replacitem_slot,
-      $.integer,
-      $.item,
-    ),
-
-    say_command: $ => seq(
-      $.say_keyword,
-      $._ws,
-      $.message,
-    ),
-
-    tell_command: $ => seq(
-      $.tell_keyword,
-      $.selector,
-      $._ws,
-      $.message,
-    ),
-
-    tellraw_command: $ => seq(
-      $.tellraw_keyword,
-      $.selector,
-      $._ws,
-      $.json,
-    ),
-
-    entity_keyword: _ => "entity",
-    execute_keyword: _ => "execute",
-    if_keyword: _ => "if",
-    in_keyword: _ => "in",
-    replaceitem_keyword: _ => "replaceitem",
-    run_keyword: _ => "run",
-    say_keyword: _ => "say",
-    tell_keyword: _ => "tell",
-    tellraw_keyword: _ => "tellraw",
-    unless_keyword: _ => "unless",
-
     message: _ => /.+/,
     json: _ => /.+/,
-
-    _ws: _ => /\s+/,
-
-    replacitem_slot: _ => /slot\.[.a-zA-Z]+/, // TODO: enum
-
-    item: _ => /[a-zA-Z_]+/, // TODO
+    identifier: _ => /[:a-zA-Z0-9_.]+/, // TODO
+    _ws: _ => /[ ]+/,
   }
 });

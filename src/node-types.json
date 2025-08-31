@@ -1,5 +1,157 @@
 [
   {
+    "type": "aimassist",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "allowlist",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "camera",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "camerashake",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "changesetting",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "clear",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "clearspawnpoint",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "clone",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "command",
     "named": true,
     "fields": {},
@@ -8,30 +160,479 @@
       "required": true,
       "types": [
         {
-          "type": "execute_command",
+          "type": "aimassist",
           "named": true
         },
         {
-          "type": "replaceitem_command",
+          "type": "allowlist",
           "named": true
         },
         {
-          "type": "say_command",
+          "type": "camera",
           "named": true
         },
         {
-          "type": "tell_command",
+          "type": "camerashake",
           "named": true
         },
         {
-          "type": "tellraw_command",
+          "type": "changesetting",
+          "named": true
+        },
+        {
+          "type": "clear",
+          "named": true
+        },
+        {
+          "type": "clearspawnpoint",
+          "named": true
+        },
+        {
+          "type": "clone",
+          "named": true
+        },
+        {
+          "type": "controlscheme",
+          "named": true
+        },
+        {
+          "type": "damage",
+          "named": true
+        },
+        {
+          "type": "daylock",
+          "named": true
+        },
+        {
+          "type": "deop",
+          "named": true
+        },
+        {
+          "type": "dialogue",
+          "named": true
+        },
+        {
+          "type": "difficulty",
+          "named": true
+        },
+        {
+          "type": "effect",
+          "named": true
+        },
+        {
+          "type": "enchant",
+          "named": true
+        },
+        {
+          "type": "event",
+          "named": true
+        },
+        {
+          "type": "execute",
+          "named": true
+        },
+        {
+          "type": "fill",
+          "named": true
+        },
+        {
+          "type": "fog",
+          "named": true
+        },
+        {
+          "type": "function",
+          "named": true
+        },
+        {
+          "type": "gamemode",
+          "named": true
+        },
+        {
+          "type": "gamerule",
+          "named": true
+        },
+        {
+          "type": "gametest",
+          "named": true
+        },
+        {
+          "type": "give",
+          "named": true
+        },
+        {
+          "type": "help",
+          "named": true
+        },
+        {
+          "type": "hud",
+          "named": true
+        },
+        {
+          "type": "inputpermission",
+          "named": true
+        },
+        {
+          "type": "kick",
+          "named": true
+        },
+        {
+          "type": "kill",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "locate",
+          "named": true
+        },
+        {
+          "type": "loot",
+          "named": true
+        },
+        {
+          "type": "me",
+          "named": true
+        },
+        {
+          "type": "mobevent",
+          "named": true
+        },
+        {
+          "type": "music",
+          "named": true
+        },
+        {
+          "type": "op",
+          "named": true
+        },
+        {
+          "type": "particle",
+          "named": true
+        },
+        {
+          "type": "permission",
+          "named": true
+        },
+        {
+          "type": "place",
+          "named": true
+        },
+        {
+          "type": "playanimation",
+          "named": true
+        },
+        {
+          "type": "playsound",
+          "named": true
+        },
+        {
+          "type": "project",
+          "named": true
+        },
+        {
+          "type": "recipe",
+          "named": true
+        },
+        {
+          "type": "reload",
+          "named": true
+        },
+        {
+          "type": "reloadconfig",
+          "named": true
+        },
+        {
+          "type": "reloadpacketlimitconfig",
+          "named": true
+        },
+        {
+          "type": "replaceitem",
+          "named": true
+        },
+        {
+          "type": "ride",
+          "named": true
+        },
+        {
+          "type": "save",
+          "named": true
+        },
+        {
+          "type": "say",
+          "named": true
+        },
+        {
+          "type": "schedule",
+          "named": true
+        },
+        {
+          "type": "scoreboard",
+          "named": true
+        },
+        {
+          "type": "script",
+          "named": true
+        },
+        {
+          "type": "scriptevent",
+          "named": true
+        },
+        {
+          "type": "sendshowstoreoffer",
+          "named": true
+        },
+        {
+          "type": "setblock",
+          "named": true
+        },
+        {
+          "type": "setmaxplayers",
+          "named": true
+        },
+        {
+          "type": "setworldspawn",
+          "named": true
+        },
+        {
+          "type": "spawnpoint",
+          "named": true
+        },
+        {
+          "type": "spreadplayers",
+          "named": true
+        },
+        {
+          "type": "stop",
+          "named": true
+        },
+        {
+          "type": "stopsound",
+          "named": true
+        },
+        {
+          "type": "structure",
+          "named": true
+        },
+        {
+          "type": "summon",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        },
+        {
+          "type": "teleport",
+          "named": true
+        },
+        {
+          "type": "tell",
+          "named": true
+        },
+        {
+          "type": "tellraw",
+          "named": true
+        },
+        {
+          "type": "testfor",
+          "named": true
+        },
+        {
+          "type": "testforblock",
+          "named": true
+        },
+        {
+          "type": "testforblocks",
+          "named": true
+        },
+        {
+          "type": "tickingarea",
+          "named": true
+        },
+        {
+          "type": "time",
+          "named": true
+        },
+        {
+          "type": "title",
+          "named": true
+        },
+        {
+          "type": "titleraw",
+          "named": true
+        },
+        {
+          "type": "toggledownfall",
+          "named": true
+        },
+        {
+          "type": "transfer",
+          "named": true
+        },
+        {
+          "type": "weather",
+          "named": true
+        },
+        {
+          "type": "wsserver",
+          "named": true
+        },
+        {
+          "type": "xp",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "execute_command",
+    "type": "controlscheme",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "damage",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "daylock",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "deop",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "dialogue",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "selector",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "difficulty",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "effect",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "enchant",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "event",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "execute",
     "named": true,
     "fields": {},
     "children": {
@@ -43,109 +644,11 @@
           "named": true
         },
         {
-          "type": "execute_if_subcommand",
+          "type": "float",
           "named": true
         },
         {
-          "type": "execute_in_subcommand",
-          "named": true
-        },
-        {
-          "type": "execute_keyword",
-          "named": true
-        },
-        {
-          "type": "execute_unless_subcommand",
-          "named": true
-        },
-        {
-          "type": "run_keyword",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "execute_if_subcommand",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "if_keyword",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "execute_in_subcommand",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "in_keyword",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "execute_unless_subcommand",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "unless_keyword",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "json",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "message",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "replaceitem_command",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "entity_keyword",
-          "named": true
-        },
-        {
-          "type": "integer",
-          "named": true
-        },
-        {
-          "type": "item",
-          "named": true
-        },
-        {
-          "type": "replaceitem_keyword",
-          "named": true
-        },
-        {
-          "type": "replacitem_slot",
+          "type": "identifier",
           "named": true
         },
         {
@@ -156,7 +659,205 @@
     }
   },
   {
-    "type": "say_command",
+    "type": "filepath",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "fill",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "float",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "fog",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "selector",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "function",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "filepath",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "gamemode",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "gamerule",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "gametest",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "give",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "json",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "help",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "hud",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "inputpermission",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "int",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "json",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "kick",
     "named": true,
     "fields": {},
     "children": {
@@ -168,7 +869,434 @@
           "named": true
         },
         {
-          "type": "say_keyword",
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "kill",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "list",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "locate",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "loot",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "me",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "message",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "message",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "mobevent",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "music",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "op",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "particle",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "permission",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "place",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "filepath",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "playanimation",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "playsound",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "project",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "recipe",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "reload",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "reloadconfig",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "reloadpacketlimitconfig",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "replaceitem",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "json",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ride",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "save",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "say",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "message",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "schedule",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "filepath",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scoreboard",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "script",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scriptevent",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "message",
+          "named": true
+        },
+        {
+          "type": "string",
           "named": true
         }
       ]
@@ -211,15 +1339,11 @@
       "required": true,
       "types": [
         {
-          "type": "integer",
+          "type": "int",
           "named": true
         },
         {
           "type": "negation",
-          "named": true
-        },
-        {
-          "type": "text",
           "named": true
         }
       ]
@@ -262,37 +1386,71 @@
   {
     "type": "selector_variable",
     "named": true,
+    "fields": {}
+  },
+  {
+    "type": "sendshowstoreoffer",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "selector",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "setblock",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "setmaxplayers",
+    "named": true,
     "fields": {},
     "children": {
       "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "selector_var_all_entities",
+          "type": "int",
           "named": true
-        },
+        }
+      ]
+    }
+  },
+  {
+    "type": "setworldspawn",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
         {
-          "type": "selector_var_all_players",
-          "named": true
-        },
-        {
-          "type": "selector_var_initiator",
-          "named": true
-        },
-        {
-          "type": "selector_var_nearest_entity",
-          "named": true
-        },
-        {
-          "type": "selector_var_nearest_player",
-          "named": true
-        },
-        {
-          "type": "selector_var_random_player",
-          "named": true
-        },
-        {
-          "type": "selector_var_self",
+          "type": "float",
           "named": true
         }
       ]
@@ -319,7 +1477,154 @@
     }
   },
   {
-    "type": "tell_command",
+    "type": "spawnpoint",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "spreadplayers",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "stop",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "stopsound",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "selector",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "structure",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "summon",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tag",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "teleport",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tell",
     "named": true,
     "fields": {},
     "children": {
@@ -333,16 +1638,12 @@
         {
           "type": "selector",
           "named": true
-        },
-        {
-          "type": "tell_keyword",
-          "named": true
         }
       ]
     }
   },
   {
-    "type": "tellraw_command",
+    "type": "tellraw",
     "named": true,
     "fields": {},
     "children": {
@@ -356,13 +1657,213 @@
         {
           "type": "selector",
           "named": true
-        },
+        }
+      ]
+    }
+  },
+  {
+    "type": "testfor",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
         {
-          "type": "tellraw_keyword",
+          "type": "selector",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "testforblock",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "testforblocks",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tickingarea",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "time",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "title",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "message",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "titleraw",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "json",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "toggledownfall",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "transfer",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "weather",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "wsserver",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "xp",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "int",
+          "named": true
+        },
+        {
+          "type": "selector",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\n",
+    "named": false
+  },
+  {
+    "type": "*",
+    "named": false
   },
   {
     "type": ",",
@@ -373,7 +1874,83 @@
     "named": false
   },
   {
+    "type": "0_degrees",
+    "named": false
+  },
+  {
+    "type": "180_degrees",
+    "named": false
+  },
+  {
+    "type": "270_degrees",
+    "named": false
+  },
+  {
+    "type": "90_degrees",
+    "named": false
+  },
+  {
     "type": "=",
+    "named": false
+  },
+  {
+    "type": "?",
+    "named": false
+  },
+  {
+    "type": "@a",
+    "named": false
+  },
+  {
+    "type": "@e",
+    "named": false
+  },
+  {
+    "type": "@initiator",
+    "named": false
+  },
+  {
+    "type": "@n",
+    "named": false
+  },
+  {
+    "type": "@p",
+    "named": false
+  },
+  {
+    "type": "@r",
+    "named": false
+  },
+  {
+    "type": "@s",
+    "named": false
+  },
+  {
+    "type": "D",
+    "named": false
+  },
+  {
+    "type": "No Ride Change",
+    "named": false
+  },
+  {
+    "type": "Reassign Rides",
+    "named": false
+  },
+  {
+    "type": "S",
+    "named": false
+  },
+  {
+    "type": "Skip Riders",
+    "named": false
+  },
+  {
+    "type": "T",
+    "named": false
+  },
+  {
+    "type": "TODO",
     "named": false
   },
   {
@@ -385,35 +1962,2083 @@
     "named": false
   },
   {
+    "type": "a",
+    "named": false
+  },
+  {
+    "type": "absorption",
+    "named": false
+  },
+  {
+    "type": "actionbar",
+    "named": false
+  },
+  {
+    "type": "add",
+    "named": false
+  },
+  {
+    "type": "adventure",
+    "named": false
+  },
+  {
+    "type": "agent",
+    "named": false
+  },
+  {
+    "type": "aimassist",
+    "named": false
+  },
+  {
+    "type": "air_bubbles",
+    "named": false
+  },
+  {
+    "type": "all",
+    "named": false
+  },
+  {
+    "type": "allow",
+    "named": false
+  },
+  {
+    "type": "allowlist",
+    "named": false
+  },
+  {
+    "type": "alwaysday",
+    "named": false
+  },
+  {
+    "type": "angle",
+    "named": false
+  },
+  {
+    "type": "anvil",
+    "named": false
+  },
+  {
+    "type": "append",
+    "named": false
+  },
+  {
+    "type": "apply_waterlogging",
+    "named": false
+  },
+  {
+    "type": "aqua_affinity",
+    "named": false
+  },
+  {
+    "type": "armor",
+    "named": false
+  },
+  {
+    "type": "ascending",
+    "named": false
+  },
+  {
+    "type": "bad_omen",
+    "named": false
+  },
+  {
+    "type": "bane_of_arthropods",
+    "named": false
+  },
+  {
+    "type": "belowname",
+    "named": false
+  },
+  {
+    "type": "binding",
+    "named": false
+  },
+  {
+    "type": "biome",
+    "named": false
+  },
+  {
+    "type": "blast_protection",
+    "named": false
+  },
+  {
+    "type": "blindness",
+    "named": false
+  },
+  {
+    "type": "block",
+    "named": false
+  },
+  {
+    "type": "block_by_block",
+    "named": false
+  },
+  {
+    "type": "block_explosion",
+    "named": false
+  },
+  {
+    "type": "blocks",
+    "named": false
+  },
+  {
+    "type": "breach",
+    "named": false
+  },
+  {
+    "type": "c",
+    "named": false
+  },
+  {
+    "type": "camera",
+    "named": false
+  },
+  {
+    "type": "camera_relative",
+    "named": false
+  },
+  {
+    "type": "camera_relative_strafe",
+    "named": false
+  },
+  {
+    "type": "camerashake",
+    "named": false
+  },
+  {
+    "type": "campfire",
+    "named": false
+  },
+  {
+    "type": "change",
+    "named": false
+  },
+  {
+    "type": "changesetting",
+    "named": false
+  },
+  {
+    "type": "channeling",
+    "named": false
+  },
+  {
+    "type": "character",
+    "named": false
+  },
+  {
+    "type": "charging",
+    "named": false
+  },
+  {
+    "type": "cheats",
+    "named": false
+  },
+  {
+    "type": "circle",
+    "named": false
+  },
+  {
+    "type": "clear",
+    "named": false
+  },
+  {
+    "type": "clearall",
+    "named": false
+  },
+  {
+    "type": "clearrealmevents",
+    "named": false
+  },
+  {
+    "type": "clearspawnpoint",
+    "named": false
+  },
+  {
+    "type": "clone",
+    "named": false
+  },
+  {
+    "type": "close",
+    "named": false
+  },
+  {
+    "type": "codebuilder_actorinfo",
+    "named": false
+  },
+  {
+    "type": "color",
+    "named": false
+  },
+  {
+    "type": "commandblockoutput",
+    "named": false
+  },
+  {
+    "type": "commandblocksenabled",
+    "named": false
+  },
+  {
     "type": "comment",
     "named": true
   },
   {
-    "type": "entity_keyword",
+    "type": "conduit_power",
+    "named": false
+  },
+  {
+    "type": "connect",
+    "named": false
+  },
+  {
+    "type": "contact",
+    "named": false
+  },
+  {
+    "type": "container",
+    "named": false
+  },
+  {
+    "type": "controlscheme",
+    "named": false
+  },
+  {
+    "type": "create",
+    "named": false
+  },
+  {
+    "type": "creative",
+    "named": false
+  },
+  {
+    "type": "crosshair",
+    "named": false
+  },
+  {
+    "type": "d",
+    "named": false
+  },
+  {
+    "type": "damage",
+    "named": false
+  },
+  {
+    "type": "darkness",
+    "named": false
+  },
+  {
+    "type": "day",
+    "named": false
+  },
+  {
+    "type": "daylock",
+    "named": false
+  },
+  {
+    "type": "daytime",
+    "named": false
+  },
+  {
+    "type": "debugger",
+    "named": false
+  },
+  {
+    "type": "default",
+    "named": false
+  },
+  {
+    "type": "delay",
+    "named": false
+  },
+  {
+    "type": "delete",
+    "named": false
+  },
+  {
+    "type": "density",
+    "named": false
+  },
+  {
+    "type": "deop",
+    "named": false
+  },
+  {
+    "type": "depth_strider",
+    "named": false
+  },
+  {
+    "type": "descending",
+    "named": false
+  },
+  {
+    "type": "destroy",
+    "named": false
+  },
+  {
+    "type": "diagnostics",
+    "named": false
+  },
+  {
+    "type": "dialogue",
+    "named": false
+  },
+  {
+    "type": "difficulty",
+    "named": false
+  },
+  {
+    "type": "disabled",
+    "named": false
+  },
+  {
+    "type": "dismount",
+    "named": false
+  },
+  {
+    "type": "distance",
+    "named": false
+  },
+  {
+    "type": "dodaylightcycle",
+    "named": false
+  },
+  {
+    "type": "doentitydrops",
+    "named": false
+  },
+  {
+    "type": "dofiretick",
+    "named": false
+  },
+  {
+    "type": "doimmediaterespawn",
+    "named": false
+  },
+  {
+    "type": "doinsomnia",
+    "named": false
+  },
+  {
+    "type": "dolimitedcrafting",
+    "named": false
+  },
+  {
+    "type": "domobloot",
+    "named": false
+  },
+  {
+    "type": "domobspawning",
+    "named": false
+  },
+  {
+    "type": "dotiledrops",
+    "named": false
+  },
+  {
+    "type": "doweathercycle",
+    "named": false
+  },
+  {
+    "type": "drowning",
+    "named": false
+  },
+  {
+    "type": "drowningdamage",
+    "named": false
+  },
+  {
+    "type": "dummy",
+    "named": false
+  },
+  {
+    "type": "e",
+    "named": false
+  },
+  {
+    "type": "ease",
+    "named": false
+  },
+  {
+    "type": "easy",
+    "named": false
+  },
+  {
+    "type": "effect",
+    "named": false
+  },
+  {
+    "type": "efficiency",
+    "named": false
+  },
+  {
+    "type": "enabled",
+    "named": false
+  },
+  {
+    "type": "enchant",
+    "named": false
+  },
+  {
+    "type": "entity",
+    "named": false
+  },
+  {
+    "type": "entity_attack",
+    "named": false
+  },
+  {
+    "type": "entity_explosion",
+    "named": false
+  },
+  {
+    "type": "entity_offset",
+    "named": false
+  },
+  {
+    "type": "event",
+    "named": false
+  },
+  {
+    "type": "events_enabled",
+    "named": false
+  },
+  {
+    "type": "evict_riders",
+    "named": false
+  },
+  {
+    "type": "execute",
+    "named": false
+  },
+  {
+    "type": "export",
+    "named": false
+  },
+  {
+    "type": "facing",
+    "named": false
+  },
+  {
+    "type": "fade",
+    "named": false
+  },
+  {
+    "type": "fall",
+    "named": false
+  },
+  {
+    "type": "falldamage",
+    "named": false
+  },
+  {
+    "type": "falling_block",
+    "named": false
+  },
+  {
+    "type": "false",
+    "named": false
+  },
+  {
+    "type": "fatal_poison",
+    "named": false
+  },
+  {
+    "type": "feather_falling",
+    "named": false
+  },
+  {
+    "type": "feature",
+    "named": false
+  },
+  {
+    "type": "featurerule",
+    "named": false
+  },
+  {
+    "type": "fill",
+    "named": false
+  },
+  {
+    "type": "filtered",
+    "named": false
+  },
+  {
+    "type": "fire",
+    "named": false
+  },
+  {
+    "type": "fire_aspect",
+    "named": false
+  },
+  {
+    "type": "fire_protection",
+    "named": false
+  },
+  {
+    "type": "fire_resistance",
+    "named": false
+  },
+  {
+    "type": "fire_tick",
+    "named": false
+  },
+  {
+    "type": "firedamage",
+    "named": false
+  },
+  {
+    "type": "fireworks",
+    "named": false
+  },
+  {
+    "type": "flame",
+    "named": false
+  },
+  {
+    "type": "fly_into_wall",
+    "named": false
+  },
+  {
+    "type": "fog",
+    "named": false
+  },
+  {
+    "type": "force",
+    "named": false
+  },
+  {
+    "type": "fortune",
+    "named": false
+  },
+  {
+    "type": "fov_clear",
+    "named": false
+  },
+  {
+    "type": "fov_set",
+    "named": false
+  },
+  {
+    "type": "freezedamage",
+    "named": false
+  },
+  {
+    "type": "freezing",
+    "named": false
+  },
+  {
+    "type": "frost_walker",
+    "named": false
+  },
+  {
+    "type": "function",
+    "named": false
+  },
+  {
+    "type": "functioncommandlimit",
+    "named": false
+  },
+  {
+    "type": "gamemode",
+    "named": false
+  },
+  {
+    "type": "gamerule",
+    "named": false
+  },
+  {
+    "type": "gametest",
+    "named": false
+  },
+  {
+    "type": "gametime",
+    "named": false
+  },
+  {
+    "type": "gettopsolidblock",
+    "named": false
+  },
+  {
+    "type": "give",
+    "named": false
+  },
+  {
+    "type": "h",
+    "named": false
+  },
+  {
+    "type": "hard",
+    "named": false
+  },
+  {
+    "type": "haste",
+    "named": false
+  },
+  {
+    "type": "health",
+    "named": false
+  },
+  {
+    "type": "health_boost",
+    "named": false
+  },
+  {
+    "type": "help",
+    "named": false
+  },
+  {
+    "type": "hide",
+    "named": false
+  },
+  {
+    "type": "hold",
+    "named": false
+  },
+  {
+    "type": "hollow",
+    "named": false
+  },
+  {
+    "type": "horse_health",
+    "named": false
+  },
+  {
+    "type": "hotbar",
+    "named": false
+  },
+  {
+    "type": "hud",
+    "named": false
+  },
+  {
+    "type": "hunger",
+    "named": false
+  },
+  {
+    "type": "identifier",
     "named": true
   },
   {
-    "type": "execute_keyword",
-    "named": true
+    "type": "if",
+    "named": false
   },
   {
-    "type": "if_keyword",
-    "named": true
+    "type": "if_group_fits",
+    "named": false
   },
   {
-    "type": "in_keyword",
-    "named": true
+    "type": "ignore_waterlogging",
+    "named": false
   },
   {
-    "type": "integer",
-    "named": true
+    "type": "impaling",
+    "named": false
   },
   {
-    "type": "item",
-    "named": true
+    "type": "in",
+    "named": false
+  },
+  {
+    "type": "in_back",
+    "named": false
+  },
+  {
+    "type": "in_bounce",
+    "named": false
+  },
+  {
+    "type": "in_circ",
+    "named": false
+  },
+  {
+    "type": "in_cubic",
+    "named": false
+  },
+  {
+    "type": "in_elastic",
+    "named": false
+  },
+  {
+    "type": "in_expo",
+    "named": false
+  },
+  {
+    "type": "in_out_back",
+    "named": false
+  },
+  {
+    "type": "in_out_bounce",
+    "named": false
+  },
+  {
+    "type": "in_out_circ",
+    "named": false
+  },
+  {
+    "type": "in_out_cubic",
+    "named": false
+  },
+  {
+    "type": "in_out_elastic",
+    "named": false
+  },
+  {
+    "type": "in_out_expo",
+    "named": false
+  },
+  {
+    "type": "in_out_quad",
+    "named": false
+  },
+  {
+    "type": "in_out_quart",
+    "named": false
+  },
+  {
+    "type": "in_out_quint",
+    "named": false
+  },
+  {
+    "type": "in_out_sine",
+    "named": false
+  },
+  {
+    "type": "in_quad",
+    "named": false
+  },
+  {
+    "type": "in_quart",
+    "named": false
+  },
+  {
+    "type": "in_quint",
+    "named": false
+  },
+  {
+    "type": "in_sine",
+    "named": false
+  },
+  {
+    "type": "infested",
+    "named": false
+  },
+  {
+    "type": "infinite",
+    "named": false
+  },
+  {
+    "type": "infinity",
+    "named": false
+  },
+  {
+    "type": "inputpermission",
+    "named": false
+  },
+  {
+    "type": "insert",
+    "named": false
+  },
+  {
+    "type": "instant_damage",
+    "named": false
+  },
+  {
+    "type": "instant_health",
+    "named": false
+  },
+  {
+    "type": "invisibility",
+    "named": false
+  },
+  {
+    "type": "item_text",
+    "named": false
+  },
+  {
+    "type": "jigsaw",
+    "named": false
+  },
+  {
+    "type": "jump",
+    "named": false
+  },
+  {
+    "type": "jump_boost",
+    "named": false
+  },
+  {
+    "type": "keep",
+    "named": false
+  },
+  {
+    "type": "keepinventory",
+    "named": false
+  },
+  {
+    "type": "kick",
+    "named": false
+  },
+  {
+    "type": "kill",
+    "named": false
+  },
+  {
+    "type": "knockback",
+    "named": false
+  },
+  {
+    "type": "lateral_movement",
+    "named": false
+  },
+  {
+    "type": "lava",
+    "named": false
+  },
+  {
+    "type": "layer_by_layer",
+    "named": false
+  },
+  {
+    "type": "levitation",
+    "named": false
+  },
+  {
+    "type": "lightning",
+    "named": false
+  },
+  {
+    "type": "linear",
+    "named": false
+  },
+  {
+    "type": "list",
+    "named": false
+  },
+  {
+    "type": "listd",
+    "named": false
+  },
+  {
+    "type": "listen",
+    "named": false
+  },
+  {
+    "type": "load",
+    "named": false
+  },
+  {
+    "type": "locate",
+    "named": false
+  },
+  {
+    "type": "locatorbar",
+    "named": false
+  },
+  {
+    "type": "locked_player_relative_strafe",
+    "named": false
+  },
+  {
+    "type": "loop",
+    "named": false
+  },
+  {
+    "type": "loot",
+    "named": false
+  },
+  {
+    "type": "looting",
+    "named": false
+  },
+  {
+    "type": "loyalty",
+    "named": false
+  },
+  {
+    "type": "luck_of_the_sea",
+    "named": false
+  },
+  {
+    "type": "lure",
+    "named": false
+  },
+  {
+    "type": "mace_smash",
+    "named": false
+  },
+  {
+    "type": "magic",
+    "named": false
+  },
+  {
+    "type": "magma",
+    "named": false
+  },
+  {
+    "type": "marketplace",
+    "named": false
+  },
+  {
+    "type": "masked",
+    "named": false
+  },
+  {
+    "type": "matches",
+    "named": false
+  },
+  {
+    "type": "maxcommandchainlength",
+    "named": false
+  },
+  {
+    "type": "me",
+    "named": false
+  },
+  {
+    "type": "mending",
+    "named": false
+  },
+  {
+    "type": "midnight",
+    "named": false
+  },
+  {
+    "type": "mine",
+    "named": false
+  },
+  {
+    "type": "minecraft:amethyst_geode_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:ancient_city",
+    "named": false
+  },
+  {
+    "type": "minecraft:andesite_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:azalea_root_system_snap_to_ceiling_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:azalea_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:bamboo_then_podzol_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:bastion_remnant",
+    "named": false
+  },
+  {
+    "type": "minecraft:beehive_east_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:beehive_esw_order_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:beehive_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:beehive_search_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:beehive_south_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:beehive_swe_order_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:beehive_wes_order_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:beehive_west_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:big_dripleaf_east_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:big_dripleaf_north_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:big_dripleaf_south_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:big_dripleaf_west_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:birch_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:birch_tree_with_beehive_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:birch_tree_with_optional_beehive_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:buried_treasure",
+    "named": false
+  },
+  {
+    "type": "minecraft:bush_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:cave_vine_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:cave_vine_in_moss_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:cave_vine_snap_to_ceiling_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:cherry_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:cherry_tree_with_beehive_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:clay_ore_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:clay_pool_with_dripleaves_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:clay_with_dripleaves_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:coal_ore_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:coal_ore_upper_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:cocoa_age_0_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:cocoa_age_1_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:cocoa_age_2_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:control_scheme_camera",
+    "named": false
+  },
+  {
+    "type": "minecraft:copper_ore_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:creaking_heart_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:creaking_heart_search_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:crimson_fungus_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:crimson_fungus_scatter_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:crimson_roots_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:crimson_roots_scatter_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:deepslate_diamond_fossil_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:deepslate_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:diamond_ore_buried_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:diamond_ore_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:diamond_ore_large_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:diorite_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:dirt_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:dripstone_caves_copper_ore_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:emerald_ore_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:end_city",
+    "named": false
+  },
+  {
+    "type": "minecraft:ender_dragon_event",
+    "named": false
+  },
+  {
+    "type": "minecraft:fallen_birch_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fallen_jungle_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fallen_oak_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fallen_spruce_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fallen_super_birch_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fancy_oak_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fancy_oak_tree_with_beehive_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fancy_oak_tree_with_leaf_litter_and_optional_beehive",
+    "named": false
+  },
+  {
+    "type": "minecraft:fancy_oak_tree_with_optional_beehive_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fern_double_plant_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fern_double_plant_lower_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fern_double_plant_patch_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fern_double_plant_upper_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fern_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:first_person",
+    "named": false
+  },
+  {
+    "type": "minecraft:fixed_boom",
+    "named": false
+  },
+  {
+    "type": "minecraft:fixup_fern_double_plant_upper_position_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fixup_grass_double_plant_upper_position_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fixup_lapis_position_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fixup_mesa_gold_position_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fixup_sunflower_double_plant_upper_position_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fixup_vines_position_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:fixup_waterlily_position_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:follow_orbit",
+    "named": false
+  },
+  {
+    "type": "minecraft:fortress",
+    "named": false
+  },
+  {
+    "type": "minecraft:fossil_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:free",
+    "named": false
+  },
+  {
+    "type": "minecraft:glow_lichen_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:gold_ore_extra_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:gold_ore_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:gold_ore_lower_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:granite_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:grass_double_plant_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:grass_double_plant_lower_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:grass_double_plant_patch_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:grass_double_plant_upper_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:gravel_ore_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:iron_ore_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:iron_ore_small_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:jungle_bush_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:jungle_fern_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:jungle_tall_grass_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:jungle_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:jungle_tree_with_cocoa_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:lapis_ore_buried_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:lapis_ore_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:mangrove_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:mangrove_tree_with_beenest_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:mansion",
+    "named": false
+  },
+  {
+    "type": "minecraft:mega_jungle_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:mega_pine_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:mega_spruce_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:mineshaft",
+    "named": false
+  },
+  {
+    "type": "minecraft:monument",
+    "named": false
+  },
+  {
+    "type": "minecraft:moss_ceiling_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:moss_ceiling_snap_to_ceiling_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:moss_patch_bonemeal_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:moss_patch_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:moss_patch_snap_to_floor_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:mountain_pine_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:mountain_spruce_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:nether_cave_carver_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:nether_soul_sand_underground_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:nether_sprouts_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:nether_sprouts_scatter_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:noop_undecorated_jungle_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:oak_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:oak_tree_with_beehive_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:oak_tree_with_optional_beehive_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:oak_tree_with_vines_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_beehive_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_fallen_birch_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_fallen_jungle_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_fallen_oak_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_fallen_spruce_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_fallen_super_birch_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_jungle_tree_cocoa_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_log_brown_mushroom_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_log_mushrooms_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_lower_cocoa_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_mountain_spruce_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_oak_tree_with_vines_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_podzol_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_roofed_tree_with_vines_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_spruce_tree_with_vines_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_tall_grass_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_undecorated_jungle_tree_with_vines_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:optional_upper_cocoa_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:pale_hanging_moss_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:pale_hanging_moss_snap_to_ceiling_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:pale_moss_patch_bonemeal_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:pale_moss_patch_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:pale_oak_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:pale_oak_tree_with_decorations_and_creaking_heart_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:pale_oak_tree_with_decorations_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:pillager_outpost",
+    "named": false
+  },
+  {
+    "type": "minecraft:pillager_patrols_event",
+    "named": false
+  },
+  {
+    "type": "minecraft:pine_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:pink_petals_scatter_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:random_cherry_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:random_clay_with_dripleaves_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:random_clay_with_dripleaves_snap_to_floor_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:random_dry_grass_block_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:random_mangrove_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:random_oak_tree_from_sapling_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:random_oak_tree_with_beehive_from_sapling_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:random_pale_oak_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:random_roofed_forest_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:random_roofed_forest_feature_with_decoration_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:random_roofed_forest_feature_with_leaf_litter_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:redstone_ore_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:roofed_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:roofed_tree_with_vines_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:ruined_portal",
+    "named": false
+  },
+  {
+    "type": "minecraft:ruins",
+    "named": false
+  },
+  {
+    "type": "minecraft:savanna_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_birch_forest_wildflowers_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_brown_mushroom_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_bush_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_cold_ocean_seagrass_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_deep_cold_ocean_seagrass_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_deep_ocean_seagrass_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_deep_warm_ocean_seagrass_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_dry_grass_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_eyeblossom_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_fern_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_flower_forest_flower_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_jungle_plant_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_jungle_tree_cocoa_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_jungle_tree_lower_cocoa_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_jungle_tree_upper_cocoa_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_leaf_litter_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_meadow_flower_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_meadow_tall_grass_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_meadow_wildflowers_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_ocean_seagrass_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_overworld_flower_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_pale_hanging_moss_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_plains_flower_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_red_mushroom_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_river_seagrass_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_swamp_flower_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_swamp_seagrass_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_sweet_berry_bush_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_taiga_plant_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_tall_grass_around_forest_foliage_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_tall_grass_around_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_tall_grass_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:scatter_warm_ocean_seagrass_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:sculk_vein_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:select_beehive_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:select_birch_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:select_birch_tree_with_leaf_litter_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:select_cocoa_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:select_jungle_plant_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:select_jungle_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:select_log_mushroom_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:select_oak_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:select_oak_tree_with_leaf_litter_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:select_roofed_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:select_spruce_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:select_standing_oak_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:select_standing_spruce_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:select_super_birch_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:select_taiga_plant_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:select_undecorated_jungle_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:shipwreck",
+    "named": false
+  },
+  {
+    "type": "minecraft:short_dry_grass_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:silverfish_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:small_dripstone_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:small_dripstone_snap_to_surface_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:spore_blossom_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:spore_blossom_snap_to_ceiling_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:spruce_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:spruce_tree_with_vines_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:stronghold",
+    "named": false
+  },
+  {
+    "type": "minecraft:sunflower_double_plant_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:sunflower_double_plant_lower_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:sunflower_double_plant_patch_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:sunflower_double_plant_upper_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:super_birch_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:super_birch_tree_with_beehive_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:super_birch_tree_with_optional_beehive_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:swamp_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:taiga_tall_grass_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:tall_dry_grass_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:tall_grass_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:tall_mangrove_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:tall_mangrove_tree_with_beenest_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:temple",
+    "named": false
+  },
+  {
+    "type": "minecraft:third_person",
+    "named": false
+  },
+  {
+    "type": "minecraft:third_person_front",
+    "named": false
+  },
+  {
+    "type": "minecraft:trail_ruins",
+    "named": false
+  },
+  {
+    "type": "minecraft:trial_chambers",
+    "named": false
+  },
+  {
+    "type": "minecraft:tuff_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:undecorated_jungle_tree_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:undecorated_jungle_tree_with_vines_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:underground_cave_carver_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:underground_extra_cave_carver_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:underground_glow_lichen_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:underground_underwater_cave_carver_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:underwater_magma_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:underwater_magma_snap_to_surface_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:underwater_magma_underground_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:village",
+    "named": false
+  },
+  {
+    "type": "minecraft:vines_single_face_scatter_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:wandering_trader_event",
+    "named": false
+  },
+  {
+    "type": "minecraft:warped_fungus_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:warped_fungus_scatter_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:warped_roots_feature",
+    "named": false
+  },
+  {
+    "type": "minecraft:warped_roots_scatter_feature",
+    "named": false
+  },
+  {
+    "type": "mining_fatigue",
+    "named": false
+  },
+  {
+    "type": "mobevent",
+    "named": false
+  },
+  {
+    "type": "mobgriefing",
+    "named": false
+  },
+  {
+    "type": "mount",
+    "named": false
+  },
+  {
+    "type": "move",
+    "named": false
+  },
+  {
+    "type": "move_backward",
+    "named": false
+  },
+  {
+    "type": "move_forward",
+    "named": false
+  },
+  {
+    "type": "move_left",
+    "named": false
+  },
+  {
+    "type": "move_right",
+    "named": false
+  },
+  {
+    "type": "movement",
+    "named": false
+  },
+  {
+    "type": "msg",
+    "named": false
+  },
+  {
+    "type": "multishot",
+    "named": false
+  },
+  {
+    "type": "music",
+    "named": false
+  },
+  {
+    "type": "n",
+    "named": false
   },
   {
     "type": "name",
+    "named": false
+  },
+  {
+    "type": "naturalregeneration",
+    "named": false
+  },
+  {
+    "type": "nausea",
     "named": false
   },
   {
@@ -425,7 +4050,167 @@
     "named": false
   },
   {
+    "type": "night",
+    "named": false
+  },
+  {
+    "type": "night_vision",
+    "named": false
+  },
+  {
+    "type": "no_ride_change",
+    "named": false
+  },
+  {
+    "type": "none",
+    "named": false
+  },
+  {
+    "type": "noon",
+    "named": false
+  },
+  {
+    "type": "normal",
+    "named": false
+  },
+  {
+    "type": "objectives",
+    "named": false
+  },
+  {
+    "type": "off",
+    "named": false
+  },
+  {
+    "type": "on",
+    "named": false
+  },
+  {
+    "type": "on_area_loaded",
+    "named": false
+  },
+  {
+    "type": "oozing",
+    "named": false
+  },
+  {
+    "type": "op",
+    "named": false
+  },
+  {
+    "type": "open",
+    "named": false
+  },
+  {
+    "type": "operation",
+    "named": false
+  },
+  {
+    "type": "ops",
+    "named": false
+  },
+  {
+    "type": "out_back",
+    "named": false
+  },
+  {
+    "type": "out_bounce",
+    "named": false
+  },
+  {
+    "type": "out_circ",
+    "named": false
+  },
+  {
+    "type": "out_cubic",
+    "named": false
+  },
+  {
+    "type": "out_elastic",
+    "named": false
+  },
+  {
+    "type": "out_expo",
+    "named": false
+  },
+  {
+    "type": "out_quad",
+    "named": false
+  },
+  {
+    "type": "out_quart",
+    "named": false
+  },
+  {
+    "type": "out_quint",
+    "named": false
+  },
+  {
+    "type": "out_sine",
+    "named": false
+  },
+  {
+    "type": "outline",
+    "named": false
+  },
+  {
+    "type": "override",
+    "named": false
+  },
+  {
     "type": "overworld",
+    "named": false
+  },
+  {
+    "type": "p",
+    "named": false
+  },
+  {
+    "type": "paperdoll",
+    "named": false
+  },
+  {
+    "type": "particle",
+    "named": false
+  },
+  {
+    "type": "peaceful",
+    "named": false
+  },
+  {
+    "type": "permission",
+    "named": false
+  },
+  {
+    "type": "piercing",
+    "named": false
+  },
+  {
+    "type": "piston",
+    "named": false
+  },
+  {
+    "type": "place",
+    "named": false
+  },
+  {
+    "type": "play",
+    "named": false
+  },
+  {
+    "type": "play_once",
+    "named": false
+  },
+  {
+    "type": "playanimation",
+    "named": false
+  },
+  {
+    "type": "player_relative",
+    "named": false
+  },
+  {
+    "type": "player_relative_strafe",
     "named": false
   },
   {
@@ -433,75 +4218,767 @@
     "named": true
   },
   {
+    "type": "players",
+    "named": false
+  },
+  {
+    "type": "playerssleepingpercentage",
+    "named": false
+  },
+  {
+    "type": "playsound",
+    "named": false
+  },
+  {
+    "type": "poison",
+    "named": false
+  },
+  {
+    "type": "pop",
+    "named": false
+  },
+  {
+    "type": "pos",
+    "named": false
+  },
+  {
+    "type": "positional",
+    "named": false
+  },
+  {
+    "type": "power",
+    "named": false
+  },
+  {
+    "type": "preload",
+    "named": false
+  },
+  {
+    "type": "profiler",
+    "named": false
+  },
+  {
+    "type": "progress_bar",
+    "named": false
+  },
+  {
+    "type": "project",
+    "named": false
+  },
+  {
+    "type": "projectile",
+    "named": false
+  },
+  {
+    "type": "projectile_protection",
+    "named": false
+  },
+  {
+    "type": "projectilescanbreakblocks",
+    "named": false
+  },
+  {
+    "type": "protection",
+    "named": false
+  },
+  {
+    "type": "punch",
+    "named": false
+  },
+  {
+    "type": "push",
+    "named": false
+  },
+  {
+    "type": "pvp",
+    "named": false
+  },
+  {
+    "type": "query",
+    "named": false
+  },
+  {
+    "type": "querytarget",
+    "named": false
+  },
+  {
+    "type": "queue",
+    "named": false
+  },
+  {
+    "type": "quick_charge",
+    "named": false
+  },
+  {
     "type": "r",
     "named": false
   },
   {
-    "type": "replaceitem_keyword",
-    "named": true
+    "type": "raid_omen",
+    "named": false
   },
   {
-    "type": "replacitem_slot",
-    "named": true
+    "type": "rain",
+    "named": false
   },
   {
-    "type": "run_keyword",
-    "named": true
+    "type": "ram_attack",
+    "named": false
+  },
+  {
+    "type": "random",
+    "named": false
+  },
+  {
+    "type": "randomtickspeed",
+    "named": false
+  },
+  {
+    "type": "reassign_rides",
+    "named": false
+  },
+  {
+    "type": "recipe",
+    "named": false
+  },
+  {
+    "type": "recipesunlock",
+    "named": false
+  },
+  {
+    "type": "regeneration",
+    "named": false
+  },
+  {
+    "type": "reload",
+    "named": false
+  },
+  {
+    "type": "reloadconfig",
+    "named": false
+  },
+  {
+    "type": "reloadpacketlimitconfig",
+    "named": false
+  },
+  {
+    "type": "remove",
+    "named": false
+  },
+  {
+    "type": "remove_all",
+    "named": false
+  },
+  {
+    "type": "remove_target",
+    "named": false
+  },
+  {
+    "type": "replace",
+    "named": false
+  },
+  {
+    "type": "replaceitem",
+    "named": false
+  },
+  {
+    "type": "reset",
+    "named": false
+  },
+  {
+    "type": "resistance",
+    "named": false
+  },
+  {
+    "type": "respawnblocksexplode",
+    "named": false
+  },
+  {
+    "type": "respiration",
+    "named": false
+  },
+  {
+    "type": "resume",
+    "named": false
+  },
+  {
+    "type": "ride",
+    "named": false
+  },
+  {
+    "type": "riptide",
+    "named": false
+  },
+  {
+    "type": "rot",
+    "named": false
+  },
+  {
+    "type": "rotational",
+    "named": false
+  },
+  {
+    "type": "run",
+    "named": false
+  },
+  {
+    "type": "runset",
+    "named": false
+  },
+  {
+    "type": "runsetuntilfail",
+    "named": false
+  },
+  {
+    "type": "runthese",
+    "named": false
+  },
+  {
+    "type": "runthis",
+    "named": false
   },
   {
     "type": "rx",
     "named": false
   },
   {
-    "type": "say_keyword",
-    "named": true
+    "type": "s",
+    "named": false
   },
   {
-    "type": "selector_var_all_entities",
-    "named": true
+    "type": "saturation",
+    "named": false
   },
   {
-    "type": "selector_var_all_players",
-    "named": true
+    "type": "save",
+    "named": false
   },
   {
-    "type": "selector_var_initiator",
-    "named": true
+    "type": "say",
+    "named": false
   },
   {
-    "type": "selector_var_nearest_entity",
-    "named": true
+    "type": "schedule",
+    "named": false
   },
   {
-    "type": "selector_var_nearest_player",
-    "named": true
+    "type": "score",
+    "named": false
   },
   {
-    "type": "selector_var_random_player",
-    "named": true
+    "type": "scoreboard",
+    "named": false
   },
   {
-    "type": "selector_var_self",
-    "named": true
+    "type": "script",
+    "named": false
   },
   {
-    "type": "tell_keyword",
-    "named": true
+    "type": "scriptevent",
+    "named": false
   },
   {
-    "type": "tellraw_keyword",
-    "named": true
+    "type": "self_destruct",
+    "named": false
   },
   {
-    "type": "text",
-    "named": true
+    "type": "sendcommandfeedback",
+    "named": false
+  },
+  {
+    "type": "sendshowstoreoffer",
+    "named": false
+  },
+  {
+    "type": "server",
+    "named": false
+  },
+  {
+    "type": "set",
+    "named": false
+  },
+  {
+    "type": "setblock",
+    "named": false
+  },
+  {
+    "type": "setdisplay",
+    "named": false
+  },
+  {
+    "type": "setmaxplayers",
+    "named": false
+  },
+  {
+    "type": "setworldspawn",
+    "named": false
+  },
+  {
+    "type": "sharpness",
+    "named": false
+  },
+  {
+    "type": "showbordereffect",
+    "named": false
+  },
+  {
+    "type": "showcoordinates",
+    "named": false
+  },
+  {
+    "type": "showdaysplayed",
+    "named": false
+  },
+  {
+    "type": "showdeathmessages",
+    "named": false
+  },
+  {
+    "type": "showrecipemessages",
+    "named": false
+  },
+  {
+    "type": "showtags",
+    "named": false
+  },
+  {
+    "type": "sidebar",
+    "named": false
+  },
+  {
+    "type": "silk_touch",
+    "named": false
+  },
+  {
+    "type": "skip_riders",
+    "named": false
+  },
+  {
+    "type": "slot",
+    "named": false
+  },
+  {
+    "type": "slot.armor",
+    "named": false
+  },
+  {
+    "type": "slot.armor.body",
+    "named": false
+  },
+  {
+    "type": "slot.armor.chest",
+    "named": false
+  },
+  {
+    "type": "slot.armor.feet",
+    "named": false
+  },
+  {
+    "type": "slot.armor.head",
+    "named": false
+  },
+  {
+    "type": "slot.armor.legs",
+    "named": false
+  },
+  {
+    "type": "slot.chest",
+    "named": false
+  },
+  {
+    "type": "slot.enderchest",
+    "named": false
+  },
+  {
+    "type": "slot.equippable",
+    "named": false
+  },
+  {
+    "type": "slot.hotbar",
+    "named": false
+  },
+  {
+    "type": "slot.inventory",
+    "named": false
+  },
+  {
+    "type": "slot.saddle",
+    "named": false
+  },
+  {
+    "type": "slot.weapon.mainhand",
+    "named": false
+  },
+  {
+    "type": "slot.weapon.offhand",
+    "named": false
+  },
+  {
+    "type": "slow_falling",
+    "named": false
+  },
+  {
+    "type": "slowness",
+    "named": false
+  },
+  {
+    "type": "smite",
+    "named": false
+  },
+  {
+    "type": "sneak",
+    "named": false
+  },
+  {
+    "type": "sonic_boom",
+    "named": false
+  },
+  {
+    "type": "soul_campfire",
+    "named": false
+  },
+  {
+    "type": "soul_speed",
+    "named": false
+  },
+  {
+    "type": "spawn",
+    "named": false
+  },
+  {
+    "type": "spawnpoint",
+    "named": false
+  },
+  {
+    "type": "spawnradius",
+    "named": false
+  },
+  {
+    "type": "spectator",
+    "named": false
+  },
+  {
+    "type": "speed",
+    "named": false
+  },
+  {
+    "type": "spreadplayers",
+    "named": false
+  },
+  {
+    "type": "spring",
+    "named": false
+  },
+  {
+    "type": "stalactite",
+    "named": false
+  },
+  {
+    "type": "stalagmite",
+    "named": false
+  },
+  {
+    "type": "start",
+    "named": false
+  },
+  {
+    "type": "start_riding",
+    "named": false
+  },
+  {
+    "type": "startcapture",
+    "named": false
+  },
+  {
+    "type": "starve",
+    "named": false
+  },
+  {
+    "type": "status_effects",
+    "named": false
+  },
+  {
+    "type": "stop",
+    "named": false
+  },
+  {
+    "type": "stop_riding",
+    "named": false
+  },
+  {
+    "type": "stopall",
+    "named": false
+  },
+  {
+    "type": "stopcapture",
+    "named": false
+  },
+  {
+    "type": "stopsound",
+    "named": false
+  },
+  {
+    "type": "strength",
+    "named": false
+  },
+  {
+    "type": "structure",
+    "named": false
+  },
+  {
+    "type": "subtitle",
+    "named": false
+  },
+  {
+    "type": "suffocation",
+    "named": false
+  },
+  {
+    "type": "summon",
+    "named": false
+  },
+  {
+    "type": "summon_ride",
+    "named": false
+  },
+  {
+    "type": "summon_rider",
+    "named": false
+  },
+  {
+    "type": "sunrise",
+    "named": false
+  },
+  {
+    "type": "sunset",
+    "named": false
+  },
+  {
+    "type": "survival",
+    "named": false
+  },
+  {
+    "type": "swift_sneak",
+    "named": false
+  },
+  {
+    "type": "tag",
+    "named": false
+  },
+  {
+    "type": "take",
+    "named": false
+  },
+  {
+    "type": "target_center_offset",
+    "named": false
+  },
+  {
+    "type": "target_entity",
+    "named": false
+  },
+  {
+    "type": "teleport",
+    "named": false
+  },
+  {
+    "type": "teleport_ride",
+    "named": false
+  },
+  {
+    "type": "teleport_rider",
+    "named": false
+  },
+  {
+    "type": "tell",
+    "named": false
+  },
+  {
+    "type": "tellraw",
+    "named": false
+  },
+  {
+    "type": "temperature",
+    "named": false
+  },
+  {
+    "type": "template",
+    "named": false
+  },
+  {
+    "type": "test",
+    "named": false
+  },
+  {
+    "type": "testfor",
+    "named": false
+  },
+  {
+    "type": "testforblock",
+    "named": false
+  },
+  {
+    "type": "testforblocks",
+    "named": false
   },
   {
     "type": "the_end",
     "named": false
   },
   {
-    "type": "unless_keyword",
-    "named": true
+    "type": "thorns",
+    "named": false
+  },
+  {
+    "type": "thunder",
+    "named": false
+  },
+  {
+    "type": "tickingarea",
+    "named": false
+  },
+  {
+    "type": "time",
+    "named": false
+  },
+  {
+    "type": "times",
+    "named": false
+  },
+  {
+    "type": "title",
+    "named": false
+  },
+  {
+    "type": "titleraw",
+    "named": false
+  },
+  {
+    "type": "tntexplodes",
+    "named": false
+  },
+  {
+    "type": "tntexplosiondropdecay",
+    "named": false
+  },
+  {
+    "type": "toggledownfall",
+    "named": false
+  },
+  {
+    "type": "tooltips",
+    "named": false
+  },
+  {
+    "type": "touch_controls",
+    "named": false
+  },
+  {
+    "type": "tp",
+    "named": false
+  },
+  {
+    "type": "transfer",
+    "named": false
+  },
+  {
+    "type": "trial_omen",
+    "named": false
+  },
+  {
+    "type": "true",
+    "named": false
+  },
+  {
+    "type": "unbreaking",
+    "named": false
+  },
+  {
+    "type": "unless",
+    "named": false
+  },
+  {
+    "type": "until_full",
+    "named": false
+  },
+  {
+    "type": "vanishing",
+    "named": false
+  },
+  {
+    "type": "view_offset",
+    "named": false
+  },
+  {
+    "type": "village_hero",
+    "named": false
+  },
+  {
+    "type": "void",
+    "named": false
+  },
+  {
+    "type": "volume",
+    "named": false
+  },
+  {
+    "type": "w",
+    "named": false
+  },
+  {
+    "type": "water_breathing",
+    "named": false
+  },
+  {
+    "type": "weakness",
+    "named": false
+  },
+  {
+    "type": "weather",
+    "named": false
+  },
+  {
+    "type": "weaving",
+    "named": false
+  },
+  {
+    "type": "whitelist",
+    "named": false
+  },
+  {
+    "type": "wind_burst",
+    "named": false
+  },
+  {
+    "type": "wind_charged",
+    "named": false
+  },
+  {
+    "type": "wither",
+    "named": false
+  },
+  {
+    "type": "world",
+    "named": false
+  },
+  {
+    "type": "wsserver",
+    "named": false
+  },
+  {
+    "type": "x",
+    "named": false
+  },
+  {
+    "type": "xp",
+    "named": false
+  },
+  {
+    "type": "xz",
+    "named": false
+  },
+  {
+    "type": "z",
+    "named": false
   }
 ]
