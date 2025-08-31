@@ -7,20 +7,44 @@
 
 (int) @number
 (float) @number.float
+["true" "false"] @boolean
+
+(score) @variable
 
 (negation) @operator
 ("/") @operator
+("..") @punctuation.delimiter
 (",") @punctuation.delimiter
 ("=") @punctuation.delimiter
 ("[") @punctuation.bracket
 ("]") @punctuation.bracket
 
 (string)  @string
+(filepath) @string.special.path
 (message) @string
 (message) @spell
 
-("matches") @keyword.operator
+;; `execute` options
+
+[
+ "in"
+ "positioned"
+ "as"
+ "at"
+ "rotated"
+ "facing"
+ "entity"
+ "align"
+] @keyword.modifier
 ["if" "unless"] @keyword.conditional
+("run") @keyword
+("matches") @keyword.operator
+
+
+;; Commands
+
+["help" "?"] @keyword.debug
+("function") @function.call
 [
  "tag"
  "camera"
@@ -52,8 +76,8 @@
  "gametest"
  "gettopsolidblock"
  "give"
- "help"
- "?"
+ ;"help"
+ ;"?"
  "hud"
  "inputpermission"
  "kick"
@@ -118,7 +142,6 @@
  "sendshowstoreoffer"
  "reloadconfig"
 ] @keyword
-("function") @function.call
 
 (selector_arg_key) @property
 (selector_variable) @constant.builtin

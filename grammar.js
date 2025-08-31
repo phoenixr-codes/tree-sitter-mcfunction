@@ -44,7 +44,32 @@ module.exports = grammar({
     // We overwrite the grammar for execute in favor of efficiency.
     execute: $ => seq("execute", $._execute_chained_option),
     _execute_chained_option: $ => choice(
-      // TODO
+      seq("align", $._string, $._execute_chained_option),
+      seq("anchored", $._actor_location, $._execute_chained_option),
+      seq("as", $._target, $._execute_chained_option),
+      seq("at", $._target, $._execute_chained_option),
+      seq(
+        "rotated",
+        choice(
+          seq($._rotation, $._rotation, $._execute_chained_option),
+          seq("at", $._target, $._execute_chained_option),
+        ),
+      ),
+      seq(
+        "facing",
+        choice(
+          $._xyz, $._execute_chained_option,
+          "entity", $._target, $._actor_location, $._execute_chained_option,
+        ),
+      ),
+      seq(
+        "positioned",
+        choice(
+          $._xyz,
+          seq("as", $._target),
+        ),
+        $._execute_chained_option
+      ),
       seq("in", $._dimension, $._execute_chained_option),
       seq(
         choice("if", "unless"),
@@ -69,27 +94,30 @@ module.exports = grammar({
     _default: _ => "default",
     _filepath: $ => $.filepath,
     _float: $ => $.float,
-    _fullintegerrange: _ => "TODO",
+    _fullintegerrange: $ => $.int_range,
     _game_test_name: _ => "TODO",
     _game_test_tag: _ => "TODO",
     _int: $ => $.int,
     _json: $ => $.json,
     _message: $ => seq($._ws, $.message),
     _operator: _ => "TODO",
-    _scoreboard_objectives: _ => "TODO",
+    _scoreboard_objectives: $ => $.score,
     _string: $ => $.string,
     _tag_values: _ => "TODO",
     _target: $ => $.selector,
     _text: _ => "TODO",
     _time: $ => seq($._int, choice("D", "S", "T")),
     _wildcardint: $ => choice("*", $._int),
-    _xyz: $ => seq($._float, $._float, $._float),
+    _xyz: $ => seq($.coord, $.coord, $.coord),
 
     // unwrapped types
     // We do want some values to be present in the parse tree
+    coord: $ => prec.right(choice(seq(choice("^", "~"), optional($.float)), $.float)),
     filepath: _ => prec(1, /[/a-zA-Z0-9_.-]+/), // TODO
-    float: _ => prec(1, /[0-9]+(\.[0-9]+)?/),
-    int: _ => prec(1, /[0-9]+/),
+    float: _ => prec(1, /-?[0-9]+(\.[0-9]+)?/),
+    int: _ => prec(1, /-?[0-9]+/),
+    int_range: $ => seq($.int, "..", $.int),
+    score: $ => $.identifier, // TODO: special rules
     string: _ => prec(1, /\S+/),
 
     // comment

@@ -12039,6 +12039,195 @@
           "members": [
             {
               "type": "STRING",
+              "value": "align"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_string"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_execute_chained_option"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "anchored"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_actor_location"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_execute_chained_option"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "as"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_target"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_execute_chained_option"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "at"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_target"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_execute_chained_option"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "rotated"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "_rotation"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "_rotation"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "_execute_chained_option"
+                    }
+                  ]
+                },
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "at"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "_target"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "_execute_chained_option"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "facing"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_xyz"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_execute_chained_option"
+                },
+                {
+                  "type": "STRING",
+                  "value": "entity"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_target"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_actor_location"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_execute_chained_option"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "positioned"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_xyz"
+                },
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "as"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "_target"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "_execute_chained_option"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
               "value": "in"
             },
             {
@@ -12257,8 +12446,8 @@
       "name": "float"
     },
     "_fullintegerrange": {
-      "type": "STRING",
-      "value": "TODO"
+      "type": "SYMBOL",
+      "name": "int_range"
     },
     "_game_test_name": {
       "type": "STRING",
@@ -12294,8 +12483,8 @@
       "value": "TODO"
     },
     "_scoreboard_objectives": {
-      "type": "STRING",
-      "value": "TODO"
+      "type": "SYMBOL",
+      "name": "score"
     },
     "_string": {
       "type": "SYMBOL",
@@ -12357,17 +12546,60 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_float"
+          "name": "coord"
         },
         {
           "type": "SYMBOL",
-          "name": "_float"
+          "name": "coord"
         },
         {
           "type": "SYMBOL",
-          "name": "_float"
+          "name": "coord"
         }
       ]
+    },
+    "coord": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": "^"
+                  },
+                  {
+                    "type": "STRING",
+                    "value": "~"
+                  }
+                ]
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "float"
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "SYMBOL",
+            "name": "float"
+          }
+        ]
+      }
     },
     "filepath": {
       "type": "PREC",
@@ -12382,7 +12614,7 @@
       "value": 1,
       "content": {
         "type": "PATTERN",
-        "value": "[0-9]+(\\.[0-9]+)?"
+        "value": "-?[0-9]+(\\.[0-9]+)?"
       }
     },
     "int": {
@@ -12390,8 +12622,29 @@
       "value": 1,
       "content": {
         "type": "PATTERN",
-        "value": "[0-9]+"
+        "value": "-?[0-9]+"
       }
+    },
+    "int_range": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "int"
+        },
+        {
+          "type": "STRING",
+          "value": ".."
+        },
+        {
+          "type": "SYMBOL",
+          "name": "int"
+        }
+      ]
+    },
+    "score": {
+      "type": "SYMBOL",
+      "name": "identifier"
     },
     "string": {
       "type": "PREC",
