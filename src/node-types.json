@@ -1404,15 +1404,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "int",
-          "named": true
-        },
-        {
-          "type": "negation",
           "named": true
         }
       ]
@@ -1932,6 +1928,10 @@
   },
   {
     "type": "\n",
+    "named": false
+  },
+  {
+    "type": "!",
     "named": false
   },
   {
@@ -4145,10 +4145,6 @@
   {
     "type": "nausea",
     "named": false
-  },
-  {
-    "type": "negation",
-    "named": true
   },
   {
     "type": "nether",

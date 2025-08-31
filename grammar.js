@@ -171,7 +171,7 @@ module.exports = grammar({
     ),
 
     selector_arg_value: $ => seq(
-      optional($.negation),
+      optional($._negation),
       choice(
         $._int,
         //$._string,
@@ -180,7 +180,7 @@ module.exports = grammar({
     ),
 
     // misc
-    negation: _ => "!",
+    _negation: _ => "!",
     message: _ => /.+/,
     json: _ => /.+/,
     identifier: _ => /[:a-zA-Z0-9_.]+/, // TODO

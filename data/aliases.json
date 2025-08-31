@@ -1,0 +1,5 @@
+{
+  "teleport": ["tp"],
+  "tell": ["w", "msg"],
+  "wsserver": ["connect"]
+}

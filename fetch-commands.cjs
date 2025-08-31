@@ -1,5 +1,6 @@
 // @ts-check
 
+const aliases = require("./data/aliases.json");
 const marked = require("marked");
 const fm = require("front-matter");
 const { JSDOM } = require("jsdom");
@@ -158,7 +159,6 @@ function parseCommandSyntax(input) {
     const filePath = path.join(commandsPath, fileName);
     const content = fs.readFileSync(filePath, "utf8");
     const commandName = path.basename(fileName, ".md");
-    //output += `  ${commandName}_cmd: _ => "${commandName}",\n`; // FIXME
     output += `  ${commandName}: $ => choice(\n`;
     lastHeadingDepth = 0;
     marked.use({ hooks: { preprocess }, renderer });
@@ -172,12 +172,16 @@ function parseCommandSyntax(input) {
       if (command?.startsWith("/")) {
         const tokens = parseCommandSyntax(command);
         let reachedOptionals = false;
-        let firstLiteral = false; // TODO: change this to true here
+        let firstLiteral = true; // TODO: change this to true here
         output += "    seq(";
         for (const token of tokens) {
           if ("literal" in token) {
             if (firstLiteral) {
-              output += `$.${token.literal}_cmd,`;
+              output += `choice("${token.literal}",`;
+              for (const alias of aliases[token.literal] ?? []) {
+                output += `"${alias}",`;
+              }
+              output += "),"
               firstLiteral = false;
             } else {
               output += `"${token.literal}",`;

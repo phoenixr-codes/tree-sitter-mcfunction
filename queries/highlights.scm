@@ -5,26 +5,36 @@
 
 (comment) @comment
 
-(int) @number
-(float) @number.float
+(int)            @number
+(float)          @number.float
 ["true" "false"] @boolean
 
 (score) @variable
 
-(negation) @operator
-("/") @operator
+("!")  @operator
+("/")  @operator
 ("..") @punctuation.delimiter
-(",") @punctuation.delimiter
-("=") @punctuation.delimiter
-("[") @punctuation.bracket
-("]") @punctuation.bracket
+(",")  @punctuation.delimiter
+("=")  @punctuation.delimiter
+("[")  @punctuation.bracket
+("]")  @punctuation.bracket
 
-(string)  @string
+(string)   @string
 (filepath) @string.special.path
-(message) @string
-(message) @spell
+(message)  @string
+(message)  @spell
 
-;; `execute` options
+
+;; Subcommands
+
+[
+ "actionbar"
+ "title"
+ "subtitle"
+ "times"
+] @keyword
+
+;;; `execute` options
 
 [
  "in"
@@ -144,5 +154,5 @@
 ] @keyword
 
 (selector_arg_key) @property
-(selector_variable) @constant.builtin
+(selector_variable) @string.special.symbol
 (player_selector) @string.special
