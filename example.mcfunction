@@ -5,7 +5,7 @@ tell @a[r=10] Psst, don't tell anyone...
 tell Steve What's up? []
 replaceitem entity @s slot.armor.head 0 netherite_helmet
 execute in nether run say Hello World
-execute in nether run /say Hello World
+execute unless nether run /say Hello World
+execute if score foo bar matches 1..10 run say Hello
 tellraw @a {"rawtext": [{"text": "Hello World"}]}
 function foo/bar
-

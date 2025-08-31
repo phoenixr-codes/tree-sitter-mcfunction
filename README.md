@@ -38,6 +38,7 @@ ln queries/*.scm ~/.config/nvim/queries/mcfunction
 
 ## TODO
 
+- Command aliases (e.g. `msg`).
 - Highlight selectors (like `@a`) and emojis (like `:heart:`) in message strings
 - Highlight command names as keywords and `function foo` as function calls
 

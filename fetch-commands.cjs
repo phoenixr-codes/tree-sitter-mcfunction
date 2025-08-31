@@ -158,6 +158,7 @@ function parseCommandSyntax(input) {
     const filePath = path.join(commandsPath, fileName);
     const content = fs.readFileSync(filePath, "utf8");
     const commandName = path.basename(fileName, ".md");
+    //output += `  ${commandName}_cmd: _ => "${commandName}",\n`; // FIXME
     output += `  ${commandName}: $ => choice(\n`;
     lastHeadingDepth = 0;
     marked.use({ hooks: { preprocess }, renderer });
@@ -171,10 +172,16 @@ function parseCommandSyntax(input) {
       if (command?.startsWith("/")) {
         const tokens = parseCommandSyntax(command);
         let reachedOptionals = false;
+        let firstLiteral = false; // TODO: change this to true here
         output += "    seq(";
         for (const token of tokens) {
           if ("literal" in token) {
-            output += `"${token.literal}",`;
+            if (firstLiteral) {
+              output += `$.${token.literal}_cmd,`;
+              firstLiteral = false;
+            } else {
+              output += `"${token.literal}",`;
+            }
           } else if ("type" in token) {
             if (!reachedOptionals && !token.required) {
               reachedOptionals = true;
