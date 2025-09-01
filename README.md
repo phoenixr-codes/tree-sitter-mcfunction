@@ -2,6 +2,10 @@
 
 `mcfunction` grammar for [tree-sitter][].
 
+<p align="center">
+  <img alt="Preview" src="./assets/preview.png" />
+</p>
+
 ## Editor Integration
 
 > [!TIP]
