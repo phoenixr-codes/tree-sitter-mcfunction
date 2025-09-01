@@ -75,4 +75,6 @@ ln queries/*.scm ~/.config/helix/runtime/queries/mcfunction
 
 - Highlight selectors (like `@a`) within message
 
+_Other todos are highlighted with a `TODO` comment accordingly..._
+
 [tree-sitter]: https://github.com/tree-sitter/tree-sitter
