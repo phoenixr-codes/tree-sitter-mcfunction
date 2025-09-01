@@ -1,0 +1,46 @@
+============
+tell command
+============
+
+tell Steve Hello World
+tell @a Hello World
+tell @a[r=10] Hello World
+tell @a[r=10,c=2] Hello World
+
+---
+
+(source_file
+  (command
+    (tell
+      (selector
+        (player_selector))
+      (message)))
+  (command
+    (tell
+      (selector
+        (selector_variable))
+      (message)))
+  (command
+    (tell
+      (selector
+        (selector_variable)
+        (selector_arguments
+          (selector_argument
+            (selector_arg_key)
+            (selector_arg_value
+              (int)))))
+      (message)))
+  (command
+    (tell
+      (selector
+        (selector_variable)
+        (selector_arguments
+          (selector_argument
+            (selector_arg_key)
+            (selector_arg_value
+              (int)))
+          (selector_argument
+            (selector_arg_key)
+            (selector_arg_value
+              (int)))))
+      (message))))

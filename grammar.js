@@ -168,6 +168,7 @@ module.exports = grammar({
     ),
 
     selector_arg_key: _ => choice(
+      "c",
       "name",
       "r",
       "rx",

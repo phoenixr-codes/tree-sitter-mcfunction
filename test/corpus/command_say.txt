@@ -1,0 +1,12 @@
+===========
+say command
+===========
+
+say Hello World
+
+---
+
+(source_file
+  (command
+    (say
+      (message))))
