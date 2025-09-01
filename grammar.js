@@ -11,6 +11,7 @@
 
 const commands = require("./data/commands.cjs");
 const emojis = require("./data/emojis.json");
+const selectorProps = require("./data/selector_properties.json");
 
 const commandNames = Object.keys(commands).filter((key) => !key.startsWith("_"));
 
@@ -167,13 +168,7 @@ module.exports = grammar({
       $.selector_arg_value,
     ),
 
-    selector_arg_key: _ => choice(
-      "c",
-      "name",
-      "r",
-      "rx",
-      // TODO: ...
-    ),
+    selector_arg_key: _ => choice(...selectorProps),
 
     selector_arg_value: $ => seq(
       optional($._negation),

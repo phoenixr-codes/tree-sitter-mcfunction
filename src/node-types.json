@@ -2519,6 +2519,18 @@
     "named": false
   },
   {
+    "type": "dx",
+    "named": false
+  },
+  {
+    "type": "dy",
+    "named": false
+  },
+  {
+    "type": "dz",
+    "named": false
+  },
+  {
     "type": "e",
     "named": false
   },
@@ -2608,6 +2620,10 @@
   },
   {
     "type": "false",
+    "named": false
+  },
+  {
+    "type": "family",
     "named": false
   },
   {
@@ -2744,6 +2760,18 @@
   },
   {
     "type": "hard",
+    "named": false
+  },
+  {
+    "type": "has_property",
+    "named": false
+  },
+  {
+    "type": "hasitem",
+    "named": false
+  },
+  {
+    "type": "haspermission",
     "named": false
   },
   {
@@ -2967,6 +2995,10 @@
     "named": false
   },
   {
+    "type": "l",
+    "named": false
+  },
+  {
     "type": "lateral_movement",
     "named": false
   },
@@ -3000,6 +3032,10 @@
   },
   {
     "type": "listen",
+    "named": false
+  },
+  {
+    "type": "lm",
     "named": false
   },
   {
@@ -3040,6 +3076,10 @@
   },
   {
     "type": "lure",
+    "named": false
+  },
+  {
+    "type": "m",
     "named": false
   },
   {
@@ -4591,6 +4631,10 @@
     "named": false
   },
   {
+    "type": "rm",
+    "named": false
+  },
+  {
     "type": "rot",
     "named": false
   },
@@ -4627,6 +4671,18 @@
     "named": false
   },
   {
+    "type": "rxm",
+    "named": false
+  },
+  {
+    "type": "ry",
+    "named": false
+  },
+  {
+    "type": "rym",
+    "named": false
+  },
+  {
     "type": "s",
     "named": false
   },
@@ -4652,6 +4708,10 @@
   },
   {
     "type": "scoreboard",
+    "named": false
+  },
+  {
+    "type": "scores",
     "named": false
   },
   {
@@ -5075,6 +5135,10 @@
     "named": false
   },
   {
+    "type": "type",
+    "named": false
+  },
+  {
     "type": "unbreaking",
     "named": false
   },
@@ -5160,6 +5224,10 @@
   },
   {
     "type": "xz",
+    "named": false
+  },
+  {
+    "type": "y",
     "named": false
   },
   {

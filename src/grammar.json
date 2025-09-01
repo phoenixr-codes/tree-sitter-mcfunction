@@ -14708,11 +14708,15 @@
       "members": [
         {
           "type": "STRING",
-          "value": "c"
+          "value": "x"
         },
         {
           "type": "STRING",
-          "value": "name"
+          "value": "y"
+        },
+        {
+          "type": "STRING",
+          "value": "z"
         },
         {
           "type": "STRING",
@@ -14720,7 +14724,83 @@
         },
         {
           "type": "STRING",
+          "value": "rm"
+        },
+        {
+          "type": "STRING",
+          "value": "dx"
+        },
+        {
+          "type": "STRING",
+          "value": "dy"
+        },
+        {
+          "type": "STRING",
+          "value": "dz"
+        },
+        {
+          "type": "STRING",
           "value": "rx"
+        },
+        {
+          "type": "STRING",
+          "value": "rxm"
+        },
+        {
+          "type": "STRING",
+          "value": "ry"
+        },
+        {
+          "type": "STRING",
+          "value": "rym"
+        },
+        {
+          "type": "STRING",
+          "value": "scores"
+        },
+        {
+          "type": "STRING",
+          "value": "tag"
+        },
+        {
+          "type": "STRING",
+          "value": "name"
+        },
+        {
+          "type": "STRING",
+          "value": "type"
+        },
+        {
+          "type": "STRING",
+          "value": "family"
+        },
+        {
+          "type": "STRING",
+          "value": "hasitem"
+        },
+        {
+          "type": "STRING",
+          "value": "has_property"
+        },
+        {
+          "type": "STRING",
+          "value": "l"
+        },
+        {
+          "type": "STRING",
+          "value": "lm"
+        },
+        {
+          "type": "STRING",
+          "value": "m"
+        },
+        {
+          "type": "STRING",
+          "value": "haspermission"
+        },
+        {
+          "type": "STRING",
+          "value": "c"
         }
       ]
     },
