@@ -1013,6 +1013,10 @@
         {
           "type": "emoji",
           "named": true
+        },
+        {
+          "type": "style",
+          "named": true
         }
       ]
     }
@@ -1640,6 +1644,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "style",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "summon",
@@ -5236,6 +5245,10 @@
   },
   {
     "type": "~",
+    "named": false
+  },
+  {
+    "type": "§",
     "named": false
   }
 ]

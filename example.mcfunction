@@ -2,7 +2,7 @@
 say Hello World
 tell @a Hello everyone
 tell @a[r=10] Psst, don't tell anyone...
-tell Steve What's up? []
+tell Steve What's §lup§r? []
 replaceitem entity @s slot.armor.head 0 netherite_helmet
 execute in nether run say I :heart: you
 execute unless nether run /say Hello World :this_is_not_an_emoji:

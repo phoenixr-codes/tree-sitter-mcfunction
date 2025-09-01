@@ -32,6 +32,7 @@
 
 (string)   @string
 (emoji)    @string.escape
+(style)    @string.escape
 (filepath) @string.special.path
 (message)  @string
 (message)  @spell

@@ -73,6 +73,6 @@ ln queries/*.scm ~/.config/helix/runtime/queries/mcfunction
 
 ## TODO
 
-- Highlight selectors (like `@a`)
+- Highlight selectors (like `@a`) within message
 
 [tree-sitter]: https://github.com/tree-sitter/tree-sitter

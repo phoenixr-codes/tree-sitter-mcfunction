@@ -122,6 +122,7 @@ module.exports = grammar({
     score: $ => alias($.string, $.score),
     string: _ => prec(1, /\S+/),
     emoji: $ => seq(":", $._emoji_name, ":"),
+    style: _ => /§./,
 
     _emoji_name: _ => token(choice(...emojis)),
 
@@ -183,7 +184,7 @@ module.exports = grammar({
     _negation: _ => "!",
     _message_char: _ => /[^:]/,
     _message_colon: _ => token(":"),
-    message: $ => repeat1(choice($.emoji, $._message_char, $._message_colon)),
+    message: $ => repeat1(choice($.style, $.emoji, $._message_char, $._message_colon)),
     json: _ => /.+/,
     identifier: _ => /[:a-zA-Z0-9_.]+/, // TODO
     _ws: _ => /[ ]+/,

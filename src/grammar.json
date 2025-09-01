@@ -14006,6 +14006,19 @@
         }
       ]
     },
+    "style": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "§"
+        },
+        {
+          "type": "PATTERN",
+          "value": "."
+        }
+      ]
+    },
     "_emoji_name": {
       "type": "TOKEN",
       "content": {
@@ -14850,6 +14863,10 @@
       "content": {
         "type": "CHOICE",
         "members": [
+          {
+            "type": "SYMBOL",
+            "name": "style"
+          },
           {
             "type": "SYMBOL",
             "name": "emoji"
