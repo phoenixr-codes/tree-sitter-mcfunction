@@ -1,5 +1,8 @@
 * text=auto eol=lf
 
+# Generated internal files
+data/commands.cjs linguist-generated
+
 # Generated source files
 src/*.json linguist-generated
 src/parser.c linguist-generated
