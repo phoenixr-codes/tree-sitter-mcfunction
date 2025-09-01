@@ -7,8 +7,6 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
-// TODO: add `word` token (https://tree-sitter.github.io/tree-sitter/creating-parsers/3-writing-the-grammar.html#keyword-extraction)
-
 const commands = require("./data/commands.cjs");
 const emojis = require("./data/emojis.json");
 const selectorProps = require("./data/selector_properties.json");
