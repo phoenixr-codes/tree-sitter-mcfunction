@@ -9,7 +9,8 @@
 
 // TODO: add `word` token (https://tree-sitter.github.io/tree-sitter/creating-parsers/3-writing-the-grammar.html#keyword-extraction)
 
-const commands = require("./data/commands.cjs")
+const commands = require("./data/commands.cjs");
+const emojis = require("./data/emojis.json");
 
 const commandNames = Object.keys(commands).filter((key) => !key.startsWith("_"));
 
@@ -119,7 +120,9 @@ module.exports = grammar({
     int_range: $ => seq($.int, "..", $.int),
     score: $ => alias($.string, $.score),
     string: _ => prec(1, /\S+/),
-    emoji: _ => seq(":", /[^:]+/, ":"),
+    emoji: $ => seq(":", $._emoji_name, ":"),
+
+    _emoji_name: _ => token(choice(...emojis)),
 
     // comment
     comment: _ => token(seq("#", /.*/)),
@@ -182,8 +185,9 @@ module.exports = grammar({
 
     // misc
     _negation: _ => "!",
-    _message_content: _ => /[^\s:]+/,
-    message: $ => repeat1(choice($.emoji, $._message_content)),
+    _message_char: _ => /[^:]/,
+    _message_colon: _ => token(":"),
+    message: $ => repeat1(choice($.emoji, $._message_char, $._message_colon)),
     json: _ => /.+/,
     identifier: _ => /[:a-zA-Z0-9_.]+/, // TODO
     _ws: _ => /[ ]+/,

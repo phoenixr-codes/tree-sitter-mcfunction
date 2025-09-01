@@ -13997,14 +13997,550 @@
           "value": ":"
         },
         {
-          "type": "PATTERN",
-          "value": "[^:]+"
+          "type": "SYMBOL",
+          "name": "_emoji_name"
         },
         {
           "type": "STRING",
           "value": ":"
         }
       ]
+    },
+    "_emoji_name": {
+      "type": "TOKEN",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "STRING",
+            "value": "wood_pickaxe"
+          },
+          {
+            "type": "STRING",
+            "value": "wood_sword"
+          },
+          {
+            "type": "STRING",
+            "value": "crafting_table"
+          },
+          {
+            "type": "STRING",
+            "value": "furnace"
+          },
+          {
+            "type": "STRING",
+            "value": "armor"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_crosshair"
+          },
+          {
+            "type": "STRING",
+            "value": "shank"
+          },
+          {
+            "type": "STRING",
+            "value": "heart"
+          },
+          {
+            "type": "STRING",
+            "value": "minecoin"
+          },
+          {
+            "type": "STRING",
+            "value": "token"
+          },
+          {
+            "type": "STRING",
+            "value": "craftable_toggle_on"
+          },
+          {
+            "type": "STRING",
+            "value": "craftable_toggle_off"
+          },
+          {
+            "type": "STRING",
+            "value": "mouse_left_button"
+          },
+          {
+            "type": "STRING",
+            "value": "mouse_right_button"
+          },
+          {
+            "type": "STRING",
+            "value": "mouse_middle_button"
+          },
+          {
+            "type": "STRING",
+            "value": "mouse_button"
+          },
+          {
+            "type": "STRING",
+            "value": "light_mouse_left_button"
+          },
+          {
+            "type": "STRING",
+            "value": "light_mouse_right_button"
+          },
+          {
+            "type": "STRING",
+            "value": "light_mouse_middle_button"
+          },
+          {
+            "type": "STRING",
+            "value": "light_mouse_button"
+          },
+          {
+            "type": "STRING",
+            "value": "touch_forward"
+          },
+          {
+            "type": "STRING",
+            "value": "touch_left"
+          },
+          {
+            "type": "STRING",
+            "value": "touch_back"
+          },
+          {
+            "type": "STRING",
+            "value": "touch_right"
+          },
+          {
+            "type": "STRING",
+            "value": "touch_jump"
+          },
+          {
+            "type": "STRING",
+            "value": "touch_sneak"
+          },
+          {
+            "type": "STRING",
+            "value": "touch_chat"
+          },
+          {
+            "type": "STRING",
+            "value": "touch_sprint_double_tap"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_virtual_button_jump"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_virtual_button_action_attack_or_destroy"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_virtual_joystick"
+          },
+          {
+            "type": "STRING",
+            "value": "touch_virtual_joystick_forward"
+          },
+          {
+            "type": "STRING",
+            "value": "touch_virtual_joystick_left"
+          },
+          {
+            "type": "STRING",
+            "value": "touch_virtual_joystick_back"
+          },
+          {
+            "type": "STRING",
+            "value": "touch_virtual_joystick_right"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_virtual_button_action_build_or_use"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_virtual_button_sneak"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_virtual_button_sprint"
+          },
+          {
+            "type": "STRING",
+            "value": "touch_sprint"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_virtual_button_fly_up"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_virtual_button_fly_down"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_virtual_button_dismount"
+          },
+          {
+            "type": "STRING",
+            "value": "touch_fly_up"
+          },
+          {
+            "type": "STRING",
+            "value": "touch_fly_down"
+          },
+          {
+            "type": "STRING",
+            "value": "touch_stop_flying"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_touch_sneak"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_touch_jump"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_touch_inventory"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_touch_fly_up"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_touch_fly_down"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_touch_forward"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_touch_left"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_touch_back"
+          },
+          {
+            "type": "STRING",
+            "value": "tip_touch_right"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_left_stick_up"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_left_stick_up"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_left_stick_up"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_left_stick_left"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_left_stick_left"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_left_stick_left"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_left_stick_down"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_left_stick_down"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_left_stick_down"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_left_stick_right"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_left_stick_right"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_left_stick_right"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_right_stick_up"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_right_stick_up"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_right_stick_up"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_right_stick_left"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_right_stick_left"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_right_stick_left"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_right_stick_down"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_right_stick_down"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_right_stick_down"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_right_stick_right"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_right_stick_right"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_right_stick_right"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_face_button_down"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_face_button_right"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_face_button_left"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_face_button_up"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_bumper_left"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_bumper_right"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_trigger_left"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_trigger_right"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_select"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_start"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_stick_left"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_stick_right"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_dpad_up"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_dpad_left"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_dpad_down"
+          },
+          {
+            "type": "STRING",
+            "value": "switch_dpad_right"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_face_button_down"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_face_button_right"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_face_button_left"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_face_button_up"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_bumper_left"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_bumper_right"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_trigger_left"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_trigger_right"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_select"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_start"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_stick_left"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_stick_right"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_dpad_up"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_dpad_left"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_dpad_down"
+          },
+          {
+            "type": "STRING",
+            "value": "ps4_dpad_right"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_face_button_down"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_face_button_right"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_face_button_left"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_face_button_up"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_bumper_left"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_bumper_right"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_trigger_left"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_trigger_right"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_select"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_start"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_stick_left"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_stick_right"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_dpad_up"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_dpad_left"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_dpad_down"
+          },
+          {
+            "type": "STRING",
+            "value": "xbox_dpad_right"
+          },
+          {
+            "type": "STRING",
+            "value": "nbsp"
+          },
+          {
+            "type": "STRING",
+            "value": "code_builder_button"
+          },
+          {
+            "type": "STRING",
+            "value": "immersive_reader_button"
+          },
+          {
+            "type": "STRING",
+            "value": "hollow_star"
+          },
+          {
+            "type": "STRING",
+            "value": "solid_star"
+          },
+          {
+            "type": "STRING",
+            "value": "camera"
+          }
+        ]
+      }
     },
     "comment": {
       "type": "TOKEN",
@@ -14214,9 +14750,16 @@
       "type": "STRING",
       "value": "!"
     },
-    "_message_content": {
+    "_message_char": {
       "type": "PATTERN",
-      "value": "[^\\s:]+"
+      "value": "[^:]"
+    },
+    "_message_colon": {
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": ":"
+      }
     },
     "message": {
       "type": "REPEAT1",
@@ -14229,7 +14772,11 @@
           },
           {
             "type": "SYMBOL",
-            "name": "_message_content"
+            "name": "_message_char"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_message_colon"
           }
         ]
       }

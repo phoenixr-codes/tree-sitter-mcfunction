@@ -73,6 +73,6 @@ ln queries/*.scm ~/.config/helix/runtime/queries/mcfunction
 
 ## TODO
 
-- Highlight selectors (like `@a`) and emojis (like `:heart:`) in message strings
+- Highlight selectors (like `@a`)
 
 [tree-sitter]: https://github.com/tree-sitter/tree-sitter

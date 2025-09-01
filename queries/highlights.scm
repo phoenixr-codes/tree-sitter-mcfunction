@@ -55,7 +55,7 @@
  "at"
  "rotated"
  "facing"
- "entity"
+ "entity" ; FIXME: also part of `replaceitem entity`
  "align"
 ] @keyword.modifier
 ["if" "unless"] @keyword.conditional
