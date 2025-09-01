@@ -13989,6 +13989,23 @@
         "value": "\\S+"
       }
     },
+    "emoji": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^:]+"
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        }
+      ]
+    },
     "comment": {
       "type": "TOKEN",
       "content": {
@@ -14197,9 +14214,25 @@
       "type": "STRING",
       "value": "!"
     },
-    "message": {
+    "_message_content": {
       "type": "PATTERN",
-      "value": ".+"
+      "value": "[^\\s:]+"
+    },
+    "message": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "emoji"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_message_content"
+          }
+        ]
+      }
     },
     "json": {
       "type": "PATTERN",

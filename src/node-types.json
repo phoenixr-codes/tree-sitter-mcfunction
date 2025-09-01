@@ -613,6 +613,11 @@
     }
   },
   {
+    "type": "emoji",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "enchant",
     "named": true,
     "fields": {},
@@ -898,11 +903,6 @@
     }
   },
   {
-    "type": "json",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "kick",
     "named": true,
     "fields": {},
@@ -1005,7 +1005,17 @@
   {
     "type": "message",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "emoji",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "mobevent",
@@ -2001,6 +2011,10 @@
     "named": false
   },
   {
+    "type": ":",
+    "named": false
+  },
+  {
     "type": "<",
     "named": false
   },
@@ -2919,6 +2933,10 @@
   {
     "type": "jigsaw",
     "named": false
+  },
+  {
+    "type": "json",
+    "named": true
   },
   {
     "type": "jump",

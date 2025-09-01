@@ -110,7 +110,7 @@ module.exports = grammar({
     _wildcardint: $ => choice("*", $._int),
     _xyz: $ => seq($.coord, $.coord, $.coord),
 
-    // unwrapped types
+    // unwrapped types & other
     // We do want some values to be present in the parse tree
     coord: $ => prec.right(choice(seq(choice("^", "~"), optional($.float)), $.float)),
     filepath: _ => prec(1, /\S+/),
@@ -119,6 +119,7 @@ module.exports = grammar({
     int_range: $ => seq($.int, "..", $.int),
     score: $ => alias($.string, $.score),
     string: _ => prec(1, /\S+/),
+    emoji: _ => seq(":", /[^:]+/, ":"),
 
     // comment
     comment: _ => token(seq("#", /.*/)),
@@ -181,7 +182,8 @@ module.exports = grammar({
 
     // misc
     _negation: _ => "!",
-    message: _ => /.+/,
+    _message_content: _ => /[^\s:]+/,
+    message: $ => repeat1(choice($.emoji, $._message_content)),
     json: _ => /.+/,
     identifier: _ => /[:a-zA-Z0-9_.]+/, // TODO
     _ws: _ => /[ ]+/,

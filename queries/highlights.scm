@@ -1,5 +1,3 @@
-; TODO: see `:h treesitter-highlight-groups` for useful rules
-
 ; TODO: apply @markup.heading.? for headings as described in
 ;       https://wiki.bedrock.dev/commands/mcfunctions#comments-style-guide
 
@@ -23,7 +21,7 @@
  "/="
  "*/"
  "<>"
-] @operator
+]      @operator
 ("!")  @operator
 ("/")  @operator
 ("..") @punctuation.delimiter
@@ -33,6 +31,7 @@
 ("]")  @punctuation.bracket
 
 (string)   @string
+(emoji)    @string.escape
 (filepath) @string.special.path
 (message)  @string
 (message)  @spell
