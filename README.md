@@ -59,6 +59,8 @@ comment-token = "#"
 ```sh
 hx --grammar fetch
 hx --grammar build
+mkdir -p ~/.config/helix/runtime/queries/mcfunction
+ln queries/*.scm ~/.config/helix/runtime/queries/mcfunction
 ```
 
 ## References
