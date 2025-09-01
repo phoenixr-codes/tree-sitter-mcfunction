@@ -88,24 +88,24 @@ module.exports = grammar({
     ),
 
     // types
-    _all_dimensions: _ => "TODO",
+    _all_dimensions: _ => "all-dimensions",
     _blockproperties: _ => "TODO",
-    _compareoperator: _ => "TODO",
+    _compareoperator: _ => choice("<", "<=", "=", ">", ">="),
     _default: _ => "default",
     _filepath: $ => $.filepath,
     _float: $ => $.float,
     _fullintegerrange: $ => $.int_range,
-    _game_test_name: _ => "TODO",
-    _game_test_tag: _ => "TODO",
+    _game_test_name: $ => $.string,
+    _game_test_tag: $ => $.string,
     _int: $ => $.int,
     _json: $ => $.json,
     _message: $ => seq($._ws, $.message),
-    _operator: _ => "TODO",
+    _operator: _ => choice("=", "+=", "-=", "*=", "/=", "*/", "<>", "<", ">"),
     _scoreboard_objectives: $ => $.score,
     _string: $ => $.string,
-    _tag_values: _ => "TODO",
+    _tag_values: $ => $.string,
     _target: $ => $.selector,
-    _text: _ => "TODO",
+    _text: $ => $.string,
     _time: $ => seq($._int, choice("D", "S", "T")),
     _wildcardint: $ => choice("*", $._int),
     _xyz: $ => seq($.coord, $.coord, $.coord),
@@ -113,11 +113,11 @@ module.exports = grammar({
     // unwrapped types
     // We do want some values to be present in the parse tree
     coord: $ => prec.right(choice(seq(choice("^", "~"), optional($.float)), $.float)),
-    filepath: _ => prec(1, /[/a-zA-Z0-9_.-]+/), // TODO
+    filepath: _ => prec(1, /\S+/),
     float: _ => prec(1, /-?[0-9]+(\.[0-9]+)?/),
     int: _ => prec(1, /-?[0-9]+/),
     int_range: $ => seq($.int, "..", $.int),
-    score: $ => $.identifier, // TODO: special rules
+    score: $ => alias($.string, $.score),
     string: _ => prec(1, /\S+/),
 
     // comment

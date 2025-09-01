@@ -11,6 +11,19 @@
 
 (score) @variable
 
+[
+ "<"
+ "<="
+ "="
+ ">"
+ ">="
+ "+="
+ "-="
+ "*="
+ "/="
+ "*/"
+ "<>"
+] @operator
 ("!")  @operator
 ("/")  @operator
 ("..") @punctuation.delimiter

@@ -1297,10 +1297,10 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": true,
+      "required": false,
       "types": [
         {
-          "type": "identifier",
+          "type": "score",
           "named": true
         }
       ]
@@ -1663,11 +1663,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "selector",
+          "named": true
+        },
+        {
+          "type": "string",
           "named": true
         }
       ]
@@ -1905,7 +1909,17 @@
   {
     "type": "wsserver",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "xp",
@@ -1939,7 +1953,23 @@
     "named": false
   },
   {
+    "type": "*/",
+    "named": false
+  },
+  {
+    "type": "*=",
+    "named": false
+  },
+  {
+    "type": "+=",
+    "named": false
+  },
+  {
     "type": ",",
+    "named": false
+  },
+  {
+    "type": "-=",
     "named": false
   },
   {
@@ -1948,6 +1978,10 @@
   },
   {
     "type": "/",
+    "named": false
+  },
+  {
+    "type": "/=",
     "named": false
   },
   {
@@ -1967,7 +2001,27 @@
     "named": false
   },
   {
+    "type": "<",
+    "named": false
+  },
+  {
+    "type": "<=",
+    "named": false
+  },
+  {
+    "type": "<>",
+    "named": false
+  },
+  {
     "type": "=",
+    "named": false
+  },
+  {
+    "type": ">",
+    "named": false
+  },
+  {
+    "type": ">=",
     "named": false
   },
   {
@@ -2080,6 +2134,10 @@
   },
   {
     "type": "all",
+    "named": false
+  },
+  {
+    "type": "all-dimensions",
     "named": false
   },
   {

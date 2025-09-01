@@ -13695,15 +13695,36 @@
     },
     "_all_dimensions": {
       "type": "STRING",
-      "value": "TODO"
+      "value": "all-dimensions"
     },
     "_blockproperties": {
       "type": "STRING",
       "value": "TODO"
     },
     "_compareoperator": {
-      "type": "STRING",
-      "value": "TODO"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "<"
+        },
+        {
+          "type": "STRING",
+          "value": "<="
+        },
+        {
+          "type": "STRING",
+          "value": "="
+        },
+        {
+          "type": "STRING",
+          "value": ">"
+        },
+        {
+          "type": "STRING",
+          "value": ">="
+        }
+      ]
     },
     "_default": {
       "type": "STRING",
@@ -13722,12 +13743,12 @@
       "name": "int_range"
     },
     "_game_test_name": {
-      "type": "STRING",
-      "value": "TODO"
+      "type": "SYMBOL",
+      "name": "string"
     },
     "_game_test_tag": {
-      "type": "STRING",
-      "value": "TODO"
+      "type": "SYMBOL",
+      "name": "string"
     },
     "_int": {
       "type": "SYMBOL",
@@ -13751,8 +13772,45 @@
       ]
     },
     "_operator": {
-      "type": "STRING",
-      "value": "TODO"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "="
+        },
+        {
+          "type": "STRING",
+          "value": "+="
+        },
+        {
+          "type": "STRING",
+          "value": "-="
+        },
+        {
+          "type": "STRING",
+          "value": "*="
+        },
+        {
+          "type": "STRING",
+          "value": "/="
+        },
+        {
+          "type": "STRING",
+          "value": "*/"
+        },
+        {
+          "type": "STRING",
+          "value": "<>"
+        },
+        {
+          "type": "STRING",
+          "value": "<"
+        },
+        {
+          "type": "STRING",
+          "value": ">"
+        }
+      ]
     },
     "_scoreboard_objectives": {
       "type": "SYMBOL",
@@ -13763,16 +13821,16 @@
       "name": "string"
     },
     "_tag_values": {
-      "type": "STRING",
-      "value": "TODO"
+      "type": "SYMBOL",
+      "name": "string"
     },
     "_target": {
       "type": "SYMBOL",
       "name": "selector"
     },
     "_text": {
-      "type": "STRING",
-      "value": "TODO"
+      "type": "SYMBOL",
+      "name": "string"
     },
     "_time": {
       "type": "SEQ",
@@ -13878,7 +13936,7 @@
       "value": 1,
       "content": {
         "type": "PATTERN",
-        "value": "[/a-zA-Z0-9_.-]+"
+        "value": "\\S+"
       }
     },
     "float": {
@@ -13915,8 +13973,13 @@
       ]
     },
     "score": {
-      "type": "SYMBOL",
-      "name": "identifier"
+      "type": "ALIAS",
+      "content": {
+        "type": "SYMBOL",
+        "name": "string"
+      },
+      "named": true,
+      "value": "score"
     },
     "string": {
       "type": "PREC",
