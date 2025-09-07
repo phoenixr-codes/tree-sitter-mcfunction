@@ -89,7 +89,7 @@ module.exports = grammar({
 
     // types
     _all_dimensions: _ => "all-dimensions",
-    _blockproperties: _ => "TODO",
+    _blockproperties: $ => $.block_properties,
     _compareoperator: _ => choice("<", "<=", "=", ">", ">="),
     _default: _ => "default",
     _filepath: $ => $.filepath,
@@ -126,6 +126,29 @@ module.exports = grammar({
 
     // comment
     comment: _ => token(seq("#", /.*/)),
+
+    // block properties
+    // reference: https://learn.microsoft.com/en-us/minecraft/creator/reference/content/blockreference/examples/intrinsicblockstateslist?view=minecraft-bedrock-stable
+    block_properties: $ => seq(
+      $.block_property,
+      repeat(seq(",", $.selector_argument)),
+    ),
+
+    block_property: $ => seq(
+      "[",
+      $.block_state,
+      "=",
+      $.block_state_value,
+    ),
+
+    block_state: $ => $.identifier, // TODO: gets highlighted as identifier,
+                                    //       not block_state
+
+    block_state_value: $ => choice(
+      $._boolean,
+      $.int,
+      $.quoted_string
+    ),
 
     // target selector
     selector: $ => choice(
@@ -189,6 +212,7 @@ module.exports = grammar({
       $._message_char,
       $._message_colon,
     )),
+    quoted_string: _ => /"[^\n"]*"/,
     json: _ => /.+/,
     identifier: _ => /[:a-zA-Z0-9_.]+/, // TODO
     _ws: _ => /[ ]+/,

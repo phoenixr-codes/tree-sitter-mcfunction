@@ -11,4 +11,5 @@ execute if score Alex bar matches 1..10 if score @r baz > @r baz run say Hello
 execute positioned 0 100 0 run tp @a ~ ~-42 ~42 false
 execute positioned as @r run title @a actionbar Yo what's up
 tellraw @a {"rawtext": [{"text": "Hello World"}]}
+setblock ~ ~ ~ cake [bite_counter=3]
 function foo/bar

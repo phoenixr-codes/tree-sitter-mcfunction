@@ -13698,8 +13698,8 @@
       "value": "all-dimensions"
     },
     "_blockproperties": {
-      "type": "STRING",
-      "value": "TODO"
+      "type": "SYMBOL",
+      "name": "block_properties"
     },
     "_compareoperator": {
       "type": "CHOICE",
@@ -14562,6 +14562,78 @@
         ]
       }
     },
+    "block_properties": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "block_property"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": ","
+              },
+              {
+                "type": "SYMBOL",
+                "name": "selector_argument"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "block_property": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "SYMBOL",
+          "name": "block_state"
+        },
+        {
+          "type": "STRING",
+          "value": "="
+        },
+        {
+          "type": "SYMBOL",
+          "name": "block_state_value"
+        }
+      ]
+    },
+    "block_state": {
+      "type": "ALIAS",
+      "content": {
+        "type": "SYMBOL",
+        "name": "identifier"
+      },
+      "named": true,
+      "value": "block_state"
+    },
+    "block_state_value": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_boolean"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "int"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "quoted_string"
+        }
+      ]
+    },
     "selector": {
       "type": "CHOICE",
       "members": [
@@ -14893,6 +14965,10 @@
           }
         ]
       }
+    },
+    "quoted_string": {
+      "type": "PATTERN",
+      "value": "\"[^\\n\"]*\""
     },
     "json": {
       "type": "PATTERN",
