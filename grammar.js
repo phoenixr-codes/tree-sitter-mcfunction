@@ -182,7 +182,13 @@ module.exports = grammar({
     _negation: _ => "!",
     _message_char: _ => /[^:]/,
     _message_colon: _ => token(":"),
-    message: $ => repeat1(choice($.style, $.emoji, $._message_char, $._message_colon)),
+    message: $ => repeat1(choice(
+      $.style,
+      $.emoji,
+      seq($.selector_variable, optional($.selector_arguments)),
+      $._message_char,
+      $._message_colon,
+    )),
     json: _ => /.+/,
     identifier: _ => /[:a-zA-Z0-9_.]+/, // TODO
     _ws: _ => /[ ]+/,

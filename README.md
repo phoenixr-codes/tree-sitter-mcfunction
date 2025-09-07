@@ -71,10 +71,4 @@ ln queries/*.scm ~/.config/helix/runtime/queries/mcfunction
 
 - [Official list of commands and their syntax](https://github.com/MicrosoftDocs/minecraft-creator/tree/main/creator/Commands/commands)
 
-## TODO
-
-- Highlight selectors (like `@a`) within message
-
-_Other todos are highlighted with a `TODO` comment accordingly..._
-
 [tree-sitter]: https://github.com/tree-sitter/tree-sitter

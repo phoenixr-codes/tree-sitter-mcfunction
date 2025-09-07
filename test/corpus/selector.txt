@@ -1,0 +1,36 @@
+=========
+Selectors
+=========
+
+tell @a msg
+tell @r[r=1] msg
+tell @p[name=Steve] msg
+
+---
+
+(source_file
+  (command
+    (tell
+      (selector
+        (selector_variable))
+      (message)))
+  (command
+    (tell
+      (selector
+        (selector_variable)
+        (selector_arguments
+          (selector_argument
+            (selector_arg_key)
+            (selector_arg_value
+              (int)))))
+      (message)))
+  (command
+    (tell
+      (selector
+        (selector_variable)
+        (selector_arguments
+          (selector_argument
+            (selector_arg_key)
+            (selector_arg_value
+              (string)))))
+      (message))))

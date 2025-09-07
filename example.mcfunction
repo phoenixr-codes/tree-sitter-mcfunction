@@ -1,6 +1,7 @@
 # This is a comment.
 say Hello World
-tell @a Hello everyone
+tell @a Hello everyone (@a)
+tell @s Players @a[r=20] are nearby
 tell @a[r=10] Psst, don't tell anyone...
 tell Steve What's §lup§r? []
 replaceitem entity @s slot.armor.head 0 netherite_helmet

@@ -1015,6 +1015,14 @@
           "named": true
         },
         {
+          "type": "selector_arguments",
+          "named": true
+        },
+        {
+          "type": "selector_variable",
+          "named": true
+        },
+        {
           "type": "style",
           "named": true
         }
@@ -1644,11 +1652,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "style",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "summon",
@@ -4980,6 +4983,10 @@
     "named": false
   },
   {
+    "type": "style",
+    "named": true
+  },
+  {
     "type": "subtitle",
     "named": false
   },
@@ -5245,10 +5252,6 @@
   },
   {
     "type": "~",
-    "named": false
-  },
-  {
-    "type": "§",
     "named": false
   }
 ]

@@ -14007,17 +14007,8 @@
       ]
     },
     "style": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "§"
-        },
-        {
-          "type": "PATTERN",
-          "value": "."
-        }
-      ]
+      "type": "PATTERN",
+      "value": "§."
     },
     "_emoji_name": {
       "type": "TOKEN",
@@ -14870,6 +14861,27 @@
           {
             "type": "SYMBOL",
             "name": "emoji"
+          },
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "selector_variable"
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "selector_arguments"
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              }
+            ]
           },
           {
             "type": "SYMBOL",
