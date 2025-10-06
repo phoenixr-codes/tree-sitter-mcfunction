@@ -89,7 +89,7 @@ module.exports = grammar({
 
     // types
     _all_dimensions: _ => "all-dimensions",
-    _blockproperties: $ => $.block_properties,
+    _blockproperties: $ => $.block_properties, // FIXME: in the example only the children appear in the tree but not "block_properties"
     _compareoperator: _ => choice("<", "<=", "=", ">", ">="),
     _default: _ => "default",
     _filepath: $ => $.filepath,
@@ -130,12 +130,13 @@ module.exports = grammar({
     // block properties
     // reference: https://learn.microsoft.com/en-us/minecraft/creator/reference/content/blockreference/examples/intrinsicblockstateslist?view=minecraft-bedrock-stable
     block_properties: $ => seq(
+      "[",
       $.block_property,
-      repeat(seq(",", $.selector_argument)),
+      repeat(seq(",", $.block_property)),
+      "]",
     ),
 
     block_property: $ => seq(
-      "[",
       $.block_state,
       "=",
       $.block_state_value,
