@@ -6,6 +6,10 @@
   <img alt="Preview" src="./assets/preview.png" />
 </p>
 
+> [!IMPORTANT]
+> This project is still in development. The installation process will be
+> simplified as soon as the grammar is considered stable.
+
 ## Editor Integration
 
 > [!TIP]
