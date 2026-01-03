@@ -1,0 +1,38 @@
+===========
+Coordinates
+===========
+
+tp ~ ~ ~
+tp 1 2.4 -3
+tp ~-1.1 ~ 4
+tp ^1 ^-4.4 ^0
+tp ~1~2.4~3
+
+---
+
+(source_file
+  (command
+    (teleport
+      (coord)
+      (coord)
+      (coord)
+  (command
+    (teleport
+      (coord (int))
+      (coord (float))
+      (coord (int))))
+  (command
+    (teleport
+      (coord (float))
+      (coord)
+      (coord int)))
+  (command
+    (teleport
+      (coord (int))
+      (coord (float))
+      (coord (int))))
+  (command
+    (teleport
+      (coord (int))
+      (coord (float))
+      (coord int))))

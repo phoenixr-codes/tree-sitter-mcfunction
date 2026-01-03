@@ -112,8 +112,9 @@ module.exports = grammar({
 
     // unwrapped types & other
     // We do want some values to be present in the parse tree
-    coord: $ => prec.right(choice(seq(choice("^", "~"), optional($.float)), $.float)),
+    coord: $ => prec.right(choice(seq(choice("^", "~"), optional($.number)), $.number)),
     filepath: _ => prec(1, /\S+/),
+    number: $ => choice($.int, $.float),
     float: _ => prec(1, /-?[0-9]+(\.[0-9]+)?/),
     int: _ => prec(1, /-?[0-9]+/),
     int_range: $ => seq($.int, "..", $.int),
