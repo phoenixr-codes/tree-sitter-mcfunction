@@ -1,7 +1,10 @@
-# tree-sitter-mcfunction
-
-`mcfunction` grammar for [tree-sitter][].
-
+<h1 align="center">tree-sitter-mcfunction</h1>
+<p align="center">
+    <img width="35%" alt="Logo" src="./assets/logo.png" />
+</p>
+<p align="center">
+    <code>mcfunction</code> grammar for <a href="https://github.com/tree-sitter/tree-sitter">tree-sitter</a>.
+</p>
 <p align="center">
   <img alt="Preview" src="./assets/preview.png" />
 </p>
@@ -89,5 +92,3 @@ ln queries/*.scm ~/.config/helix/runtime/queries/mcfunction
 ## References
 
 - [Official list of commands and their syntax](https://github.com/MicrosoftDocs/minecraft-creator/tree/main/creator/Commands/commands)
-
-[tree-sitter]: https://github.com/tree-sitter/tree-sitter
