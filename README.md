@@ -6,9 +6,24 @@
   <img alt="Preview" src="./assets/preview.png" />
 </p>
 
+> [!NOTE]
+> This grammar is designed for Minecraft Bedrock Edition commands and not Java
+> Edition commands.
+
 > [!IMPORTANT]
 > This project is still in development. The installation process will be
 > simplified as soon as the grammar is considered stable.
+
+## Features
+
+- ✅ **All** commands
+- ✅ Good query highlights (e.g. `if` is highlighted as a conditional keyword,
+  `help` is highlighted as a debug keyword, ...)
+- ✅ Selectors (e.g. `@a[r=3]`)
+- ✅ JSON (used for "raw text" in `tellraw` and `titleraw`)
+- ✅ Comments
+- ✅ Markup/Formatting (e.g. `§a`)
+- ✅ Emojis (e.g. `:heart:`)
 
 ## Editor Integration
 
